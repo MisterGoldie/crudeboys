@@ -164,16 +164,38 @@
     }
   }
 
-  // preload images
-  const preloadImages = () => {
-    return new Promise((resolve, reject) => {
-      imagesLoaded(document.querySelectorAll(".content__img"), resolve);
+  // Mouse-trail images: desktop-only, WebP, never block first paint.
+  const shouldEnableTrail = () =>
+    window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+    window.innerWidth >= 830;
+
+  const startImageTrail = () => {
+    if (!shouldEnableTrail()) return;
+
+    const imgs = document.querySelectorAll('.content__img[data-src]');
+    imgs.forEach((img) => {
+      if (!img.getAttribute('src')) img.src = img.getAttribute('data-src');
     });
+
+    let started = false;
+    const start = () => {
+      if (started) return;
+      started = true;
+      new ImageTrail();
+    };
+
+    if (typeof imagesLoaded === 'function') {
+      imagesLoaded(imgs, start);
+    }
+    // Don't stall the page if a few trail frames are slow.
+    setTimeout(start, 1200);
   };
 
-  preloadImages().then(() => {
-    new ImageTrail();
-  });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startImageTrail);
+  } else {
+    startImageTrail();
+  }
 
   document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.querySelector('.search-input');
