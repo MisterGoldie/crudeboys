@@ -1487,15 +1487,20 @@ section.studies .study .study-year {
   }
 
   .crudes-section {
-    padding-top: 64px;
+    padding-top: 72px;
     padding-bottom: 40px;
     padding-left: 12px;
     padding-right: 12px;
   }
 
+  .crudes-info {
+    top: 14px;
+    right: 12px;
+  }
+
   .crudes-section .search-container {
     width: 100%;
-    padding: 0;
+    padding: 0 44px 0 0;
   }
 
   .crudes-section .initial-text {
@@ -1672,6 +1677,18 @@ section.studies .study .study-year {
   .traits {
     padding: 48px 12px;
     min-height: auto !important;
+  }
+
+  .crudes-section {
+    padding-top: 72px;
+    padding-bottom: 40px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .crudes-info {
+    top: 12px;
+    right: 10px;
   }
 
   .game-board {
