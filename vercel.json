@@ -1,5 +1,11 @@
 {
   "framework": null,
+  "functions": {
+    "api/ipfs-proxy.js": {
+      "memory": 1024,
+      "maxDuration": 30
+    }
+  },
   "rewrites": [
     {
       "source": "/ipfs-proxy/:file",
