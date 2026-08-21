@@ -1,8 +1,0 @@
-{
-  "name": "crudeboys",
-  "private": true,
-  "scripts": {
-    "start": "node local-server.js",
-    "dev": "node local-server.js"
-  }
-}

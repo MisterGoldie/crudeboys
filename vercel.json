@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "framework": null,
   "rewrites": [
     {
       "source": "/ipfs-proxy/:file",
