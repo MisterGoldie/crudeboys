@@ -69,6 +69,11 @@ http
       return;
     }
 
+    if (urlPath === "/api/collection-stats") {
+      require("./api/collection-stats")(req, res);
+      return;
+    }
+
     const filePath = path.join(root, urlPath);
 
     if (!filePath.startsWith(root)) {

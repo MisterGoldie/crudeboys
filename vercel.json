@@ -3,6 +3,9 @@
   "functions": {
     "api/ipfs-proxy.js": {
       "maxDuration": 60
+    },
+    "api/collection-stats.js": {
+      "maxDuration": 15
     }
   },
   "rewrites": [

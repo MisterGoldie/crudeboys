@@ -234,6 +234,65 @@
         cups: { label: 'Cups on Doge', market: 'cups' },
     };
 
+    function formatDogeAmount(n) {
+        const digits = n >= 100 ? 0 : 2;
+        return Number(n).toLocaleString('en-US', {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: digits,
+        });
+    }
+
+    function formatUsdAmount(n) {
+        const digits = n >= 100 ? 0 : 2;
+        return Number(n).toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: digits,
+            maximumFractionDigits: digits,
+        });
+    }
+
+    function setupCollectionVolume() {
+        const nodes = document.querySelectorAll('.collection-volume[data-collection]');
+        if (!nodes.length) return;
+
+        const applyStats = (data) => {
+            nodes.forEach((el) => {
+                const slug = el.getAttribute('data-collection');
+                const stats = data.collections && data.collections[slug];
+                if (!stats) return;
+                const dogeEl = el.querySelector('.volume-doge');
+                const usdEl = el.querySelector('.volume-usd');
+                if (dogeEl) {
+                    dogeEl.textContent = formatDogeAmount(stats.doge) + ' DOGE';
+                }
+                if (usdEl) {
+                    usdEl.textContent = formatUsdAmount(stats.usd) + ' USD';
+                }
+                el.hidden = false;
+            });
+        };
+
+        const loadStats = () =>
+            fetch('/api/collection-stats', { cache: 'no-store' })
+                .then((res) => {
+                    if (!res.ok) throw new Error('stats failed');
+                    return res.json();
+                })
+                .then(applyStats)
+                .catch(() => {});
+
+        loadStats();
+        window.setInterval(() => {
+            if (!document.hidden) loadStats();
+        }, 60000);
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) loadStats();
+        });
+    }
+
+    setupCollectionVolume();
+
     Promise.all([
         fetch('js/crudeboys_image.json').then(response => response.json()),
         fetch('js/crudeboys_traits.json').then(response => response.json()).catch(() => ({})),

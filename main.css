@@ -1013,6 +1013,54 @@ section.studies .study .study-year {
     margin-top: 4px;
 }
 
+.collection-volume {
+    position: absolute;
+    top: 86px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    pointer-events: none;
+    z-index: 5;
+    font-family: "Schoolbell", cursive;
+    line-height: 1.15;
+}
+
+.collection-volume[hidden] {
+    display: none !important;
+}
+
+.volume-doge,
+.volume-usd {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.72;
+    max-width: 46%;
+}
+
+.volume-doge {
+    text-align: left;
+}
+
+.volume-usd {
+    text-align: right;
+}
+
+.cups-volume {
+    top: 148px;
+    color: #111111;
+}
+
+.cruno-volume,
+.crudes-volume {
+    color: #ffffff;
+    top: 42px;
+}
+
 .sip-button {
     display: inline-block;
     margin-top: 25px;
@@ -1475,6 +1523,25 @@ section.studies .study .study-year {
   #codSection {
     padding: 110px 16px 48px !important;
     min-height: auto !important;
+  }
+
+  .collection-volume {
+    top: 68px;
+    padding: 0 10px;
+  }
+
+  .cups-volume {
+    top: 104px;
+  }
+
+  .cruno-volume,
+  .crudes-volume {
+    top: 28px;
+  }
+
+  .volume-doge,
+  .volume-usd {
+    font-size: 11px;
   }
 
   #codLogo {
