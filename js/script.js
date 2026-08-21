@@ -69,12 +69,14 @@
 
   class ImageTrail {
     constructor() {
-      this.DOM = { content: document.querySelector(".content") };
+      this.DOM = { content: document.querySelector("#imageTrail") || document.querySelector(".content") };
+      if (!this.DOM.content) return;
       this.images = [];
       [...this.DOM.content.querySelectorAll("img")].forEach((img) =>
         this.images.push(new Image(img))
       );
       this.imagesTotal = this.images.length;
+      if (!this.imagesTotal) return;
       this.imgPosition = 0;
       this.zIndexVal = 1;
       this.threshold = 100;
@@ -288,56 +290,75 @@
         const num = cardNumberFromName(card.meta.name);
         const remote = card.meta.image;
         const list = [];
+        const host = window.location.hostname;
+        const onLocal =
+            host === 'localhost' ||
+            host === '127.0.0.1' ||
+            host.endsWith('.trycloudflare.com');
 
-        // Local files when present (localhost / tunnel with crudeboycards/).
-        const local = localCardPath(card.meta.name);
-        if (local) list.push(local);
-
-        // Browser-friendly gateways first (works on Vercel without serverless proxy).
-        if (num) {
-            list.push(
-                `https://w3s.link/ipfs/${IPFS_CID}/${num}.png`,
-                `https://nftstorage.link/ipfs/${IPFS_CID}/${num}.png`
-            );
+        // Local files only where the crudeboycards folder is actually served.
+        if (onLocal) {
+            const local = localCardPath(card.meta.name);
+            if (local) list.push(local);
+            if (num) list.push(`ipfs-proxy/${num}.png`);
         }
 
-        // Same-origin proxy as backup (local-server.js / Vercel API).
-        if (num) list.push(`ipfs-proxy/${num}.png`);
-
+        // Browser-friendly gateways (skip known-hangy ones).
+        if (num) {
+            list.push(`https://w3s.link/ipfs/${IPFS_CID}/${num}.png`);
+        }
         if (remote) list.push(remote);
-
         if (num) {
             list.push(
                 `https://ipfs.io/ipfs/${IPFS_CID}/${num}.png`,
-                `https://${IPFS_CID}.ipfs.dweb.link/${num}.png`
+                `https://${IPFS_CID}.ipfs.w3s.link/${num}.png`
             );
         }
 
-        return [...new Set(list)];
+        return [...new Set(list.filter(Boolean))];
     }
 
-    function resolveCardImage(card, fallbackUrl) {
+    function loadImageCandidate(src, timeoutMs) {
         return new Promise((resolve, reject) => {
-            const candidates = [...imageCandidates(card)];
-            // Wallet preview/thumbnail only as last resort after full art fails.
-            if (fallbackUrl) candidates.push(fallbackUrl);
-            const unique = [...new Set(candidates.filter(Boolean))];
-            let i = 0;
-
-            const tryNext = () => {
-                if (i >= unique.length) {
-                    reject(new Error('card image failed to load'));
-                    return;
+            const img = new window.Image();
+            let settled = false;
+            const finish = (ok) => {
+                if (settled) return;
+                settled = true;
+                clearTimeout(timer);
+                img.onload = null;
+                img.onerror = null;
+                // Drop the request if it timed out / failed.
+                try {
+                    img.src = '';
+                } catch (e) {
+                    /* ignore */
                 }
-                const src = unique[i++];
-                const img = new window.Image();
-                img.onload = () => resolve(src);
-                img.onerror = tryNext;
-                img.src = src;
+                if (ok) resolve(src);
+                else reject(new Error('image load failed'));
             };
-
-            tryNext();
+            const timer = setTimeout(() => finish(false), timeoutMs);
+            img.onload = () => finish(true);
+            img.onerror = () => finish(false);
+            img.src = src;
         });
+    }
+
+    async function resolveCardImage(card, fallbackUrl) {
+        const candidates = [...imageCandidates(card)];
+        if (fallbackUrl) candidates.push(fallbackUrl);
+        const unique = [...new Set(candidates.filter(Boolean))];
+
+        for (const src of unique) {
+            try {
+                // Keep each attempt short so search never spins forever.
+                await loadImageCandidate(src, 5000);
+                return src;
+            } catch (e) {
+                /* try next */
+            }
+        }
+        throw new Error('card image failed to load');
     }
 
     function findCardByInscriptionId(id) {
