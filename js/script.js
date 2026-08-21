@@ -281,11 +281,6 @@
         return ranks;
     }
 
-    // Prefer same-origin sources first so mobile / cloudflared tunnels are not
-    // blocked by IPFS gateway Cross-Origin-Resource-Policy. External gateways
-    // are fallbacks (and for Arweave, where /ipfs-proxy does not exist).
-    const IPFS_CID = 'bafybeidm3sremjulcdqefulerybnjqtzcf2o3vvyu5ayg35lbthmhxs5hi';
-
     function normalizeInscriptionId(id) {
         return String(id || '').trim().toLowerCase();
     }
@@ -295,41 +290,14 @@
         return match ? match[1] : null;
     }
 
-    function localCardPath(name) {
-        const num = cardNumberFromName(name);
-        return num ? `images/crudeboycards/${num}.png` : null;
+    function localCardImage(card) {
+        const num = cardNumberFromName(card && card.meta && card.meta.name);
+        return num ? `images/crudeboycards/${num}.webp` : null;
     }
 
     function imageCandidates(card) {
-        const num = cardNumberFromName(card.meta.name);
-        const remote = card.meta.image;
-        const list = [];
-        const host = window.location.hostname;
-        const onLocal =
-            host === 'localhost' ||
-            host === '127.0.0.1' ||
-            host.endsWith('.trycloudflare.com');
-
-        // Local files only where the crudeboycards folder is actually served.
-        if (onLocal) {
-            const local = localCardPath(card.meta.name);
-            if (local) list.push(local);
-            if (num) list.push(`ipfs-proxy/${num}.png`);
-        }
-
-        // Browser-friendly gateways (skip known-hangy ones).
-        if (num) {
-            list.push(`https://w3s.link/ipfs/${IPFS_CID}/${num}.png`);
-        }
-        if (remote) list.push(remote);
-        if (num) {
-            list.push(
-                `https://ipfs.io/ipfs/${IPFS_CID}/${num}.png`,
-                `https://${IPFS_CID}.ipfs.w3s.link/${num}.png`
-            );
-        }
-
-        return [...new Set(list.filter(Boolean))];
+        const local = localCardImage(card);
+        return local ? [local] : [];
     }
 
     function loadImageCandidate(src, timeoutMs) {
@@ -342,12 +310,6 @@
                 clearTimeout(timer);
                 img.onload = null;
                 img.onerror = null;
-                // Drop the request if it timed out / failed.
-                try {
-                    img.src = '';
-                } catch (e) {
-                    /* ignore */
-                }
                 if (ok) resolve(src);
                 else reject(new Error('image load failed'));
             };
@@ -360,13 +322,19 @@
 
     async function resolveCardImage(card, fallbackUrl) {
         const candidates = [...imageCandidates(card)];
-        if (fallbackUrl) candidates.push(fallbackUrl);
+        if (
+            fallbackUrl &&
+            !/^https?:/i.test(fallbackUrl) &&
+            !/dweb\.link/i.test(fallbackUrl) &&
+            !/ipfs/i.test(fallbackUrl)
+        ) {
+            candidates.push(fallbackUrl);
+        }
         const unique = [...new Set(candidates.filter(Boolean))];
 
         for (const src of unique) {
             try {
-                // Keep each attempt short so search never spins forever.
-                await loadImageCandidate(src, 5000);
+                await loadImageCandidate(src, 8000);
                 return src;
             } catch (e) {
                 /* try next */
@@ -495,8 +463,7 @@
             `;
             const grid = cardsGrid.querySelector('.gallery-grid');
 
-            // Load a few at a time so IPFS/proxy is not flooded (mobile + tunnel).
-            const CONCURRENCY = 2;
+            const CONCURRENCY = 8;
             let cursor = 0;
 
             const loadOne = async ({ card, fallbackUrl }) => {

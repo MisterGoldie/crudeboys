@@ -6,10 +6,10 @@ const root = __dirname;
 const port = 8000;
 const IPFS_CID = "bafybeidm3sremjulcdqefulerybnjqtzcf2o3vvyu5ayg35lbthmhxs5hi";
 const IPFS_GATEWAYS = [
-  `https://${IPFS_CID}.ipfs.dweb.link`,
-  `https://nftstorage.link/ipfs/${IPFS_CID}`,
   `https://w3s.link/ipfs/${IPFS_CID}`,
+  `https://${IPFS_CID}.ipfs.w3s.link`,
   `https://ipfs.io/ipfs/${IPFS_CID}`,
+  `https://nftstorage.link/ipfs/${IPFS_CID}`,
 ];
 
 const types = {
@@ -23,6 +23,7 @@ const types = {
   ".gif": "image/gif",
   ".svg": "image/svg+xml",
   ".avif": "image/avif",
+  ".webp": "image/webp",
   ".ico": "image/x-icon",
 };
 
@@ -36,9 +37,10 @@ async function proxyIpfsCard(res, fileName) {
   for (const base of IPFS_GATEWAYS) {
     const url = `${base}/${fileName}`;
     try {
-      const upstream = await fetch(url);
+      const upstream = await fetch(url, { signal: AbortSignal.timeout(10000) });
       if (!upstream.ok) continue;
       const buf = Buffer.from(await upstream.arrayBuffer());
+      if (!buf.length || buf[0] !== 0x89) continue;
       res.writeHead(200, {
         "Content-Type": "image/png",
         "Cache-Control": "public, max-age=86400",
