@@ -253,23 +253,29 @@
     }
 
     function setupCollectionVolume() {
-        const nodes = document.querySelectorAll('.collection-volume[data-collection]');
+        const nodes = document.querySelectorAll('.collection-info[data-collection]');
         if (!nodes.length) return;
+
+        const closeAll = (except) => {
+            nodes.forEach((el) => {
+                if (el === except) return;
+                el.classList.remove('is-open');
+                const btn = el.querySelector('.collection-info-btn');
+                const panel = el.querySelector('.collection-info-panel');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+                if (panel) panel.hidden = true;
+            });
+        };
 
         const applyStats = (data) => {
             nodes.forEach((el) => {
                 const slug = el.getAttribute('data-collection');
                 const stats = data.collections && data.collections[slug];
-                if (!stats) return;
                 const dogeEl = el.querySelector('.volume-doge');
                 const usdEl = el.querySelector('.volume-usd');
-                if (dogeEl) {
-                    dogeEl.textContent = formatDogeAmount(stats.doge) + ' DOGE';
-                }
-                if (usdEl) {
-                    usdEl.textContent = formatUsdAmount(stats.usd) + ' USD';
-                }
-                el.hidden = false;
+                if (!stats) return;
+                if (dogeEl) dogeEl.textContent = formatDogeAmount(stats.doge) + ' DOGE';
+                if (usdEl) usdEl.textContent = formatUsdAmount(stats.usd) + ' USD';
             });
         };
 
@@ -280,7 +286,35 @@
                     return res.json();
                 })
                 .then(applyStats)
-                .catch(() => {});
+                .catch(() => {
+                    nodes.forEach((el) => {
+                        const dogeEl = el.querySelector('.volume-doge');
+                        if (dogeEl && dogeEl.textContent === 'loading...') {
+                            dogeEl.textContent = 'sales data unavailable';
+                        }
+                    });
+                });
+
+        nodes.forEach((el) => {
+            const btn = el.querySelector('.collection-info-btn');
+            const panel = el.querySelector('.collection-info-panel');
+            if (!btn || !panel) return;
+            el.addEventListener('click', (event) => event.stopPropagation());
+            btn.addEventListener('click', (event) => {
+                event.stopPropagation();
+                const open = el.classList.contains('is-open');
+                closeAll();
+                if (open) return;
+                el.classList.add('is-open');
+                btn.setAttribute('aria-expanded', 'true');
+                panel.hidden = false;
+            });
+        });
+
+        document.addEventListener('click', () => closeAll());
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') closeAll();
+        });
 
         loadStats();
         window.setInterval(() => {
