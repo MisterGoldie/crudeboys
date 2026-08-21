@@ -10,6 +10,18 @@ async function fetchJson(url, timeoutMs) {
   return res.json();
 }
 
+function toDoge(koinu) {
+  const n = Number(koinu);
+  if (!Number.isFinite(n) || n < 0) return 0;
+  return n / KOINU;
+}
+
+function toCount(value) {
+  const n = Number(value);
+  if (!Number.isFinite(n) || n < 0) return 0;
+  return Math.round(n);
+}
+
 async function fetchDogeUsd() {
   try {
     const json = await fetchJson(
@@ -28,13 +40,18 @@ async function fetchDogeUsd() {
   throw new Error('DOGE price unavailable');
 }
 
-async function fetchCollectionVolume(slug) {
+async function fetchCollectionStats(slug) {
   const json = await fetchJson(`https://api.doggy.market/nfts/${slug}`, 10000);
-  const koinu = Number(json && json.volume);
-  if (!Number.isFinite(koinu) || koinu < 0) {
-    throw new Error(`${slug} volume unavailable`);
-  }
-  return koinu / KOINU;
+  const volumeDoge = toDoge(json && json.volume);
+  const floorDoge = toDoge(json && json.floorPrice);
+  return {
+    volumeDoge,
+    floorDoge,
+    listed: toCount(json && json.listed),
+    owners: toCount(json && json.owners),
+    supply: toCount(json && json.supply),
+    sales: toCount(json && json.trades),
+  };
 }
 
 function send(res, status, body, cacheSeconds) {
@@ -58,17 +75,18 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const [priceUsd, volumes] = await Promise.all([
+    const [priceUsd, rows] = await Promise.all([
       fetchDogeUsd(),
-      Promise.all(COLLECTIONS.map((slug) => fetchCollectionVolume(slug))),
+      Promise.all(COLLECTIONS.map((slug) => fetchCollectionStats(slug))),
     ]);
 
     const collections = {};
     COLLECTIONS.forEach((slug, index) => {
-      const doge = volumes[index];
+      const row = rows[index];
       collections[slug] = {
-        doge,
-        usd: doge * priceUsd,
+        ...row,
+        volumeUsd: row.volumeDoge * priceUsd,
+        floorUsd: row.floorDoge * priceUsd,
       };
     });
 

@@ -252,6 +252,10 @@
         });
     }
 
+    function formatCount(n) {
+        return Number(n).toLocaleString('en-US', { maximumFractionDigits: 0 });
+    }
+
     function setupCollectionVolume() {
         const nodes = document.querySelectorAll('.collection-info[data-collection]');
         if (!nodes.length) return;
@@ -267,15 +271,29 @@
             });
         };
 
+        const statRow = (label, value) =>
+            `<div class="info-row"><dt>${label}</dt><dd>${value}</dd></div>`;
+
+        const moneyValue = (doge, usd) =>
+            `${formatDogeAmount(doge)} DOGE<br>${formatUsdAmount(usd)} USD`;
+
         const applyStats = (data) => {
             nodes.forEach((el) => {
                 const slug = el.getAttribute('data-collection');
                 const stats = data.collections && data.collections[slug];
-                const dogeEl = el.querySelector('.volume-doge');
-                const usdEl = el.querySelector('.volume-usd');
-                if (!stats) return;
-                if (dogeEl) dogeEl.textContent = formatDogeAmount(stats.doge) + ' DOGE';
-                if (usdEl) usdEl.textContent = formatUsdAmount(stats.usd) + ' USD';
+                const loadingEl = el.querySelector('.info-loading');
+                const listEl = el.querySelector('.info-stats');
+                if (!stats || !listEl) return;
+                listEl.innerHTML = [
+                    statRow('floor', moneyValue(stats.floorDoge, stats.floorUsd)),
+                    statRow('listed', formatCount(stats.listed)),
+                    statRow('owners', formatCount(stats.owners)),
+                    statRow('supply', formatCount(stats.supply)),
+                    statRow('sales', formatCount(stats.sales)),
+                    statRow('volume', moneyValue(stats.volumeDoge, stats.volumeUsd)),
+                ].join('');
+                listEl.hidden = false;
+                if (loadingEl) loadingEl.hidden = true;
             });
         };
 
@@ -288,9 +306,9 @@
                 .then(applyStats)
                 .catch(() => {
                     nodes.forEach((el) => {
-                        const dogeEl = el.querySelector('.volume-doge');
-                        if (dogeEl && dogeEl.textContent === 'loading...') {
-                            dogeEl.textContent = 'sales data unavailable';
+                        const loadingEl = el.querySelector('.info-loading');
+                        if (loadingEl && !loadingEl.hidden) {
+                            loadingEl.textContent = 'sales data unavailable';
                         }
                     });
                 });

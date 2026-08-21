@@ -1055,9 +1055,9 @@ section.studies .study .study-year {
     position: absolute;
     top: calc(100% + 8px);
     right: 0;
-    min-width: 170px;
-    padding: 10px 12px;
-    background: rgba(0, 0, 0, 0.84);
+    min-width: 220px;
+    padding: 12px 14px;
+    background: rgba(0, 0, 0, 0.88);
     color: #ffffff;
     border-radius: 8px;
     text-align: right;
@@ -1069,16 +1069,47 @@ section.studies .study .study-year {
     display: none !important;
 }
 
-.volume-label {
-    font-size: 12px;
-    opacity: 0.7;
-    margin-bottom: 4px;
+.info-loading {
+    font-size: 13px;
+    opacity: 0.75;
 }
 
-.volume-doge,
-.volume-usd {
+.info-stats {
+    margin: 0;
+}
+
+.info-stats[hidden] {
+    display: none !important;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.info-row:first-child {
+    padding-top: 0;
+}
+
+.info-row:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.info-row dt {
+    font-size: 12px;
+    opacity: 0.65;
+    text-transform: lowercase;
+}
+
+.info-row dd {
     margin: 0;
     font-size: 14px;
+    text-align: right;
 }
 
 .sip-button {
