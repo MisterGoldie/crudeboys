@@ -7,42 +7,51 @@
     distance: (x1, y1, x2, y2) => Math.hypot(x2 - x1, y2 - y1),
   };
 
-  // get the mouse positions (viewport coords — trail layer is position:fixed)
-  const getMousePos = (ev) => {
-    let posx = 0;
-    let posy = 0;
-    if (!ev) ev = window.event;
-    if (typeof ev.clientX === 'number' && typeof ev.clientY === 'number') {
-      posx = ev.clientX;
-      posy = ev.clientY;
-    } else if (ev.pageX || ev.pageY) {
-      posx = ev.pageX;
-      posy = ev.pageY;
-    }
-    return { x: posx, y: posy };
-  };
-
+  // Mouse position relative to the promo section only.
+  let trailRoot = null;
+  let trailHovering = false;
   let mousePos = (lastMousePos = cacheMousePos = { x: 0, y: 0 });
 
-  // update the mouse position
-  window.addEventListener("mousemove", (ev) => (mousePos = getMousePos(ev)));
-
-  // update the position on touch (mobile/tablet support)
-  const getTouchPos = (ev) => {
+  const getPosInTrail = (ev) => {
+    if (!trailRoot) return { x: 0, y: 0 };
+    const rect = trailRoot.getBoundingClientRect();
     const touch = (ev.touches && ev.touches[0]) || (ev.changedTouches && ev.changedTouches[0]);
-    if (!touch) return mousePos;
-    return { x: touch.clientX, y: touch.clientY };
+    const clientX = touch ? touch.clientX : ev.clientX;
+    const clientY = touch ? touch.clientY : ev.clientY;
+    return { x: clientX - rect.left, y: clientY - rect.top };
   };
-  window.addEventListener(
-    "touchstart",
-    (ev) => (mousePos = lastMousePos = getTouchPos(ev)),
-    { passive: true }
-  );
-  window.addEventListener(
-    "touchmove",
-    (ev) => (mousePos = getTouchPos(ev)),
-    { passive: true }
-  );
+
+  const bindTrailPointer = () => {
+    trailRoot = document.getElementById('promoSection');
+    if (!trailRoot) return;
+    trailRoot.addEventListener('mousemove', (ev) => {
+      trailHovering = true;
+      mousePos = getPosInTrail(ev);
+    });
+    trailRoot.addEventListener('mouseenter', (ev) => {
+      trailHovering = true;
+      mousePos = lastMousePos = getPosInTrail(ev);
+    });
+    trailRoot.addEventListener('mouseleave', () => {
+      trailHovering = false;
+    });
+    trailRoot.addEventListener(
+      'touchstart',
+      (ev) => {
+        trailHovering = true;
+        mousePos = lastMousePos = getPosInTrail(ev);
+      },
+      { passive: true }
+    );
+    trailRoot.addEventListener(
+      'touchmove',
+      (ev) => {
+        trailHovering = true;
+        mousePos = getPosInTrail(ev);
+      },
+      { passive: true }
+    );
+  };
 
   const getMouseDistance = () =>
     MathUtils.distance(mousePos.x, mousePos.y, lastMousePos.x, lastMousePos.y);
@@ -83,6 +92,10 @@
       requestAnimationFrame(() => this.render());
     }
     render() {
+      if (!trailHovering) {
+        requestAnimationFrame(() => this.render());
+        return;
+      }
       let distance = getMouseDistance();
       cacheMousePos.x = MathUtils.lerp(
         cacheMousePos.x || mousePos.x,
@@ -166,13 +179,15 @@
     }
   }
 
-  // Mouse-trail images: desktop-only, WebP, never block first paint.
+  // Mouse-trail images: desktop-only, WebP, clipped to #promoSection.
   const shouldEnableTrail = () =>
     window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
     window.innerWidth >= 830;
 
   const startImageTrail = () => {
     if (!shouldEnableTrail()) return;
+    bindTrailPointer();
+    if (!trailRoot) return;
 
     const imgs = document.querySelectorAll('.content__img[data-src]');
     imgs.forEach((img) => {
@@ -189,7 +204,6 @@
     if (typeof imagesLoaded === 'function') {
       imagesLoaded(imgs, start);
     }
-    // Don't stall the page if a few trail frames are slow.
     setTimeout(start, 1200);
   };
 

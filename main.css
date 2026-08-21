@@ -165,14 +165,7 @@ p {
 }
 
 main {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 40;
-  pointer-events: none;
-  overflow: hidden;
+  display: none;
 }
 
 .content {
@@ -183,31 +176,38 @@ main {
   align-items: center;
 }
 
-#imageTrail {
+.promo-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 20px 60px;
+  box-sizing: border-box;
+}
+
+.promo-trail {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
   overflow: hidden;
+  z-index: 2;
 }
 
 #homepage {
   width: 100%;
-    /* max-width: 500px; */
-    /* max-width:500px; */
-    display: flex;
-    align-content: center;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height:100%;
-    position:relative;
-    /* gap:50px; */
-    margin-top:150px;
-    margin-bottom:50px;
-    /* background:#5B910A; */
-    /* height:auto !important; */
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .iframe-container {
@@ -246,14 +246,6 @@ iframe {
   opacity: 0;
   pointer-events: none;
   will-change: transform, opacity;
-}
-
-/* Trail layer is fixed full-viewport; no need to clip to 100vh content box. */
-@media screen and (min-width: 50em) {
-  main > .content {
-    height: 100%;
-    overflow: hidden;
-  }
 }
 
 .container {
@@ -1251,12 +1243,13 @@ section.studies .study .study-year {
     padding: 0 12px;
   }
 
-  main {
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    pointer-events: none;
-    display: none; /* trail disabled on small screens; saves work */
+  .promo-section {
+    min-height: 70vh;
+    padding: 48px 12px;
+  }
+
+  .promo-trail {
+    display: none;
   }
 }
 

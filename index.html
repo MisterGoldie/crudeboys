@@ -19,8 +19,30 @@
   </head>
   <body>
     <div class="container">
-      <main>
-        <div class="content" id="imageTrail">
+      <!-- Navigation section -->
+      <nav style="background-color:#000000">
+        <div class="nav-logo">
+          <div class="nav-link">
+            <h1 class="utf-paragraph" style="line-height: 1.2em; margin-top: calc(var(--scale-factor) * -2.2);">🃏</h1>
+          </div>
+        </div>
+        <div class="nav-title">Welcome to Crudeworld</div>
+        <div class="nav-links">
+          <div class="nav-link"><a href="https://twitter.com/TheCrudeboysNFT" target="blank_">X</a></div>
+          <button id="walletConnectBtn" class="wallet-connect-btn" type="button">Connect Wallet</button>
+        </div>
+      </nav>
+
+      <!-- Cups on Doge -->
+      <section id="codSection" class="content traits" style="position:relative; background-color:#FFD700; min-height:60vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:140px 20px 60px;">
+        <div class="headline" style="color:#000000;">Cups on Doge</div>
+        <img id="codLogo" class="image" style="width:50vw; max-width:400px; margin-top:20px;" src="images/codlogo.png" alt="Cups on Doge logo" />
+        <a href="https://doggy.market/nfts/cups" target="_blank" rel="noopener" class="sip-button">sip sumn</a>
+      </section>
+
+      <!-- Home page / Cruno promo — mouse-trail cards stay inside this section only -->
+      <section id="promoSection" class="content promo-section">
+        <div id="imageTrail" class="promo-trail" aria-hidden="true">
           <img class="content__img" data-src="images/four.webp" alt="" />
           <img class="content__img" data-src="images/five.webp" alt="" />
           <img class="content__img" data-src="images/six.webp" alt="" />
@@ -40,63 +62,30 @@
           <img class="content__img" data-src="images/twenty4.webp" alt="" />
           <img class="content__img" data-src="images/twenty5.webp" alt="" />
         </div>
-      </main>
 
-      <!-- Navigation section -->
-      <nav style="background-color:#000000">
-        <!-- Logo section within the nav -->
-        <div class="nav-logo">
-          <div class="nav-link">
-            <h1 class="utf-paragraph" style="line-height: 1.2em; margin-top: calc(var(--scale-factor) * -2.2);">🃏</h1>
-          </div>
-        </div>
-        
-        <!-- Added title -->
-        <div class="nav-title">Welcome to Crudeworld</div>
-        
-        <!-- Navigation links -->
-        <div class="nav-links">
-          <div class="nav-link"><a href="https://twitter.com/TheCrudeboysNFT" target="blank_">X</a></div>
-          <button id="walletConnectBtn" class="wallet-connect-btn" type="button">Connect Wallet</button>
-        </div>
-      </nav>
-
-      <!-- Cups on Doge -->
-      <section id="codSection" class="content traits" style="position:relative; background-color:#FFD700; min-height:60vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:140px 20px 60px;">
-        <div class="headline" style="color:#000000;">Cups on Doge</div>
-        <img id="codLogo" class="image" style="width:50vw; max-width:400px; margin-top:20px;" src="images/codlogo.png" alt="Cups on Doge logo" />
-        <a href="https://doggy.market/nfts/cups" target="_blank" rel="noopener" class="sip-button">sip sumn</a>
-      </section>
-
-      <!-- Home page content section -->
-      <section class="content">
-        <div id="homepage" style="margin-top:150px; margin-bottom:50px; height:auto !important;">
-          
-        <a href="https://doggy.market/nfts/cruno" target="_blank" rel="noopener">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="images/cardpromo-800.webp 800w, images/cardpromo.webp 1200w"
-              sizes="(max-width: 830px) 90vw, min(70vw, 800px)"
-            >
-            <img
-              class="cruno-promo"
-              src="images/cardpromo.png"
-              width="1000"
-              height="738"
-              alt="Cruno promo"
-              loading="lazy"
-              decoding="async"
-              fetchpriority="low"
-            >
-          </picture>
-        </a>
+        <div id="homepage">
+          <a href="https://doggy.market/nfts/cruno" target="_blank" rel="noopener">
+            <picture>
+              <source
+                type="image/webp"
+                srcset="images/cardpromo-800.webp 800w, images/cardpromo.webp 1200w"
+                sizes="(max-width: 830px) 90vw, min(70vw, 800px)"
+              >
+              <img
+                class="cruno-promo"
+                src="images/cardpromo.png"
+                width="1000"
+                height="738"
+                alt="Cruno promo"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              >
+            </picture>
+          </a>
 
           <div class="content-box">
-            <!-- <div class="headline">By Crudeboys</div> -->
-            <div class="ibm-plex-mono-regular paragraph">
-            <!-- </b> -->
-            </div>
+            <div class="ibm-plex-mono-regular paragraph"></div>
           </div>
         </div>
       </section>
