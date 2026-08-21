@@ -645,18 +645,23 @@ section.studies .study .study-year {
   gap: 10px;
   flex-wrap: wrap;
   width: 100%;
-  min-height: 120px;
+  min-height: 0;
   overflow-anchor: none;
 }
 
 .poker-hand-name {
-  min-height: 1.4em;
-  margin-top: 8px;
+  min-height: 0;
+  margin-top: 0;
   color: #3B1F4A;
   font-family: "Schoolbell", cursive;
   font-size: 18px;
   opacity: 0.9;
   transition: opacity 0.35s ease;
+}
+
+.poker-hand-name:not(:empty) {
+  min-height: 1.4em;
+  margin-top: 8px;
 }
 
 .poker-card {
@@ -697,7 +702,7 @@ section.studies .study .study-year {
 }
 
 .poker-result {
-  margin: 18px 0;
+  margin: 28px 0 36px;
   color: #5A2D82;
   font-family: "Schoolbell", cursive;
   font-size: clamp(1.6rem, 4vw, 2.6rem);
