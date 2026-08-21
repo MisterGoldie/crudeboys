@@ -7,17 +7,17 @@
     distance: (x1, y1, x2, y2) => Math.hypot(x2 - x1, y2 - y1),
   };
 
-  // get the mouse positions
+  // get the mouse positions (viewport coords — trail layer is position:fixed)
   const getMousePos = (ev) => {
     let posx = 0;
     let posy = 0;
     if (!ev) ev = window.event;
-    if (ev.pageX || ev.pageY) {
+    if (typeof ev.clientX === 'number' && typeof ev.clientY === 'number') {
+      posx = ev.clientX;
+      posy = ev.clientY;
+    } else if (ev.pageX || ev.pageY) {
       posx = ev.pageX;
       posy = ev.pageY;
-    } else if (ev.clientX || ev.clientY) {
-      posx = ev.clientX + body.scrollLeft + docEl.scrollLeft;
-      posy = ev.clientY + body.scrollTop + docEl.scrollTop;
     }
     return { x: posx, y: posy };
   };
@@ -31,7 +31,7 @@
   const getTouchPos = (ev) => {
     const touch = (ev.touches && ev.touches[0]) || (ev.changedTouches && ev.changedTouches[0]);
     if (!touch) return mousePos;
-    return { x: touch.pageX, y: touch.pageY };
+    return { x: touch.clientX, y: touch.clientY };
   };
   window.addEventListener(
     "touchstart",

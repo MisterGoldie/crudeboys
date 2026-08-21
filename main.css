@@ -165,12 +165,14 @@ p {
 }
 
 main {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  min-height: auto;
-  z-index: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 40;
+  pointer-events: none;
+  overflow: hidden;
 }
 
 .content {
@@ -179,6 +181,15 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#imageTrail {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
 }
 
 #homepage {
@@ -233,12 +244,14 @@ iframe {
   top: 0;
   left: 0;
   opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
 }
 
-/* Keep the mouse-trail layer viewport-sized; do not clip page sections. */
+/* Trail layer is fixed full-viewport; no need to clip to 100vh content box. */
 @media screen and (min-width: 50em) {
   main > .content {
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
   }
 }
@@ -1243,6 +1256,7 @@ section.studies .study .study-year {
     max-width: 100%;
     overflow: hidden;
     pointer-events: none;
+    display: none; /* trail disabled on small screens; saves work */
   }
 }
 
