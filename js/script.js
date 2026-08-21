@@ -623,7 +623,7 @@
 
         if (gameState.gameActive) {
             setTimeout(() => {
-                const aiMove = getBestMove(gameState.board, 'X');
+                const aiMove = getCpuMove(gameState.board, 'X');
                 makeMove(aiMove);
             }, 500);
         }
@@ -676,63 +676,43 @@
         return gameState.board.every(cell => cell !== '');
     }
 
-    function getBestMove(board, player) {
-        const opponent = player === 'X' ? 'O' : 'X';
-
-        // For the first move, make it random
-        if (board.filter(cell => cell !== '').length === 0) {
-            const availableCorners = [0, 2, 6, 8];
-            const allFirstMoves = [...availableCorners, 1, 3, 4, 5, 7];
-            return allFirstMoves[Math.floor(Math.random() * allFirstMoves.length)];
-        }
-
-        // Check for winning move
-        for (let i = 0; i < 9; i++) {
-            if (board[i] === '') {
-                board[i] = player;
-                if (checkWin(board, player)) {
-                    board[i] = '';
-                    return i;
-                }
-                board[i] = '';
-            }
-        }
-
-        // Check for blocking opponent's winning move
-        for (let i = 0; i < 9; i++) {
-            if (board[i] === '') {
-                board[i] = opponent;
-                if (checkWin(board, opponent)) {
-                    board[i] = '';
-                    return i;
-                }
-                board[i] = '';
-            }
-        }
-
-        // Take any available corner
-        const corners = [0, 2, 6, 8];
-        const availableCorners = corners.filter(corner => board[corner] === '');
-        if (availableCorners.length > 0) {
-            return availableCorners[Math.floor(Math.random() * availableCorners.length)];
-        }
-
-        // Take center if available
-        if (board[4] === '') return 4;
-
-        // Take any available side
-        const sides = [1, 3, 5, 7];
-        const availableSides = sides.filter(side => board[side] === '');
-        if (availableSides.length > 0) {
-            return availableSides[Math.floor(Math.random() * availableSides.length)];
-        }
-
-        // Take any available space
-        const availableMoves = board.reduce((acc, cell, index) => {
+    function emptyCells(board) {
+        return board.reduce((acc, cell, index) => {
             if (cell === '') acc.push(index);
             return acc;
         }, []);
-        return availableMoves[Math.floor(Math.random() * availableMoves.length)];
+    }
+
+    function findWinningMove(board, player) {
+        for (let i = 0; i < 9; i++) {
+            if (board[i] !== '') continue;
+            board[i] = player;
+            const wins = checkWin(board, player);
+            board[i] = '';
+            if (wins) return i;
+        }
+        return null;
+    }
+
+    function randomMove(board) {
+        const open = emptyCells(board);
+        return open[Math.floor(Math.random() * open.length)];
+    }
+
+    function getCpuMove(board, player) {
+        const opponent = player === 'X' ? 'O' : 'X';
+
+        if (emptyCells(board).length === 9) {
+            return randomMove(board);
+        }
+
+        const winMove = findWinningMove(board, player);
+        if (winMove !== null && Math.random() < 0.7) return winMove;
+
+        const blockMove = findWinningMove(board, opponent);
+        if (blockMove !== null && Math.random() < 0.35) return blockMove;
+
+        return randomMove(board);
     }
 
     function restartGame() {
@@ -749,7 +729,7 @@
         statusDisplay.textContent = "CPU's turn";
         
         setTimeout(() => {
-            const aiMove = getBestMove(gameState.board, 'X');
+            const aiMove = getCpuMove(gameState.board, 'X');
             makeMove(aiMove);
         }, 500);
     }
@@ -760,7 +740,7 @@
 
     // Start the game with CPU's move
     setTimeout(() => {
-        const aiMove = getBestMove(gameState.board, 'X');
+        const aiMove = getCpuMove(gameState.board, 'X');
         makeMove(aiMove);
     }, 500);
   }
