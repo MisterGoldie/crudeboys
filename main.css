@@ -600,6 +600,7 @@ section.studies .study .study-year {
   flex-direction: column;
   justify-content: center;
   padding: 100px 20px 70px;
+  overflow-anchor: none;
 }
 
 .poker-table {
@@ -645,6 +646,7 @@ section.studies .study .study-year {
   flex-wrap: wrap;
   width: 100%;
   min-height: 120px;
+  overflow-anchor: none;
 }
 
 .poker-hand-name {
@@ -1500,7 +1502,7 @@ section.studies .study .study-year {
 
   .crudes-section .search-container {
     width: 100%;
-    padding: 0 44px 0 0;
+    padding: 0 16px;
   }
 
   .crudes-section .initial-text {

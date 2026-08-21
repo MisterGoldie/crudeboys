@@ -828,20 +828,12 @@
 
         function fadeOutHand(el) {
             const cards = Array.prototype.slice.call(el.querySelectorAll('.poker-card'));
-            if (!cards.length) {
-                el.innerHTML = '';
-                return Promise.resolve();
-            }
-            if (reduceMotion) {
-                el.innerHTML = '';
-                return Promise.resolve();
-            }
+            if (!cards.length) return Promise.resolve();
+            if (reduceMotion) return Promise.resolve();
             cards.forEach((card) => {
                 card.classList.add('is-out');
             });
-            return wait(fadeMs + 40).then(() => {
-                el.innerHTML = '';
-            });
+            return wait(fadeMs + 40);
         }
 
         function preloadSrc(src) {
@@ -869,42 +861,58 @@
         }
 
         function renderHand(el, hand) {
-            el.innerHTML = '';
             const srcs = hand.map((item) => localCardImage(item.card));
             return Promise.all(srcs.map(preloadSrc)).then(() => {
-                const buttons = hand.map((item, index) => {
+                const fragment = document.createDocumentFragment();
+                const cards = hand.map((item, index) => {
                     const imageSrc = srcs[index];
-                    const btn = document.createElement('button');
-                    btn.type = 'button';
-                    btn.className = 'poker-card';
-                    btn.innerHTML = `
+                    const card = document.createElement('div');
+                    card.className = 'poker-card';
+                    card.setAttribute('role', 'button');
+                    card.innerHTML = `
                         <img src="${imageSrc}" alt="${item.card.meta.name}" decoding="async">
                         <span>${item.card.meta.name}</span>
                     `;
-                    btn.addEventListener('click', () => {
+                    card.addEventListener('click', () => {
                         showCardDetails(item.card.id, item.card.meta.name, imageSrc);
                     });
-                    el.appendChild(btn);
-                    return btn;
+                    fragment.appendChild(card);
+                    return card;
                 });
+                el.innerHTML = '';
+                el.appendChild(fragment);
 
                 return nextPaint().then(() => {
-                    buttons.forEach((btn, index) => {
+                    cards.forEach((card, index) => {
                         if (reduceMotion) {
-                            btn.classList.add('is-in');
+                            card.classList.add('is-in');
                             return;
                         }
-                        window.setTimeout(() => revealCard(btn), index * staggerMs);
+                        window.setTimeout(() => revealCard(card), index * staggerMs);
                     });
-                    return wait(cardInMs + Math.max(0, buttons.length - 1) * staggerMs);
+                    return wait(cardInMs + Math.max(0, cards.length - 1) * staggerMs);
                 });
             });
+        }
+
+        function pinScroll() {
+            const y = window.scrollY;
+            const keep = () => {
+                if (window.scrollY !== y) window.scrollTo(0, y);
+            };
+            window.addEventListener('scroll', keep, { capture: true, passive: true });
+            return () => {
+                window.removeEventListener('scroll', keep, { capture: true });
+                window.scrollTo(0, y);
+            };
         }
 
         function deal() {
             if (busy) return;
             busy = true;
+            dealBtn.blur();
             dealBtn.disabled = true;
+            const unpin = pinScroll();
 
             const round = shuffleTen();
             const youHand = evaluatePokerHand(round.you);
@@ -934,16 +942,19 @@
                 })
                 .then(() => {
                     renderScore();
-                    busy = false;
-                    dealBtn.disabled = false;
                 })
-                .catch(() => {
+                .catch(() => {})
+                .then(() => {
+                    unpin();
                     busy = false;
                     dealBtn.disabled = false;
                 });
         }
 
-        dealBtn.addEventListener('click', deal);
+        dealBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            deal();
+        });
         if (scoreEl) scoreEl.textContent = 'you 0 — 0 cpu';
     }
 
