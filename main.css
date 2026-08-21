@@ -1032,6 +1032,41 @@ section.studies .study .study-year {
     transform: translateY(-2px);
 }
 
+.collection-gallery {
+    width: 100%;
+    max-width: 1100px;
+    margin: 36px auto 0;
+    padding: 0 16px 12px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 3;
+}
+
+.cups-gallery,
+.cruno-gallery {
+    margin-top: 96px;
+}
+
+.collection-gallery[hidden] {
+    display: none !important;
+}
+
+.cups-gallery .gallery-status,
+.cups-gallery .gallery-card,
+.cups-gallery .gallery-card-name {
+    color: #111111;
+}
+
+.cups-gallery .gallery-card-loading {
+    background: rgba(0, 0, 0, 0.12);
+    color: #111111;
+}
+
+.cruno-gallery .gallery-status,
+.cruno-gallery .gallery-card-name {
+    color: #ffffff;
+}
+
 .rarity-rank {
     margin-top: 10px;
     font-family: "Schoolbell", cursive;
@@ -1041,6 +1076,13 @@ section.studies .study .study-year {
     background: rgba(0, 0, 0, 0.35);
     padding: 4px 10px;
     border-radius: 4px;
+}
+
+.modal-collection {
+    font-family: "Schoolbell", cursive;
+    font-size: 18px;
+    color: #648A2A;
+    margin: 0 0 8px;
 }
 
 .modal-rarity-rank {
@@ -1194,6 +1236,10 @@ section.studies .study .study-year {
     margin-right: auto;
 }
 
+.crudes-section .gallery-group-title {
+    font-size: clamp(1.05rem, 3.4vw, 1.5rem);
+}
+
 .crudes-section .gallery-grid {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 16px;
@@ -1225,6 +1271,18 @@ section.studies .study .study-year {
     color: #ffffff;
     text-align: center;
     margin-bottom: 20px;
+}
+
+.gallery-group {
+    width: 100%;
+}
+
+.gallery-group-title {
+    font-family: "Schoolbell", cursive;
+    font-size: clamp(1.15rem, 3.5vw, 1.7rem);
+    color: #ffffff;
+    text-align: center;
+    margin: 8px 0 14px;
 }
 
 .gallery-grid {
@@ -1467,7 +1525,7 @@ section.studies .study .study-year {
 
   .promo-section {
     min-height: 70vh;
-    padding: 48px 12px;
+    padding: 48px 12px 36px;
   }
 
   .promo-trail {

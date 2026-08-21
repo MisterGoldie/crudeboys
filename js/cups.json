@@ -1,0 +1,3402 @@
+[
+  {
+    "id": "f18b56cdbec3ac6d4ed608d8d32537960a695ea6ba14bd3c9154329bb7453997i0",
+    "meta": {
+      "name": "Basil #1"
+    },
+    "attributes": {
+      "Background": "Chili green",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Doge",
+      "Straw color": "Orange",
+      "Cup color": "Gold foil",
+      "Random item": "Angel wings",
+      "Eyewear": "None",
+      "Cup Number": "1"
+    }
+  },
+  {
+    "id": "594f04e42bb360ba89744bca4d35e58d7a68262ede2baf3af562624b3b87e214i0",
+    "meta": {
+      "name": "Fynn #2"
+    },
+    "attributes": {
+      "Background": "Fire red",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Triangle",
+      "Straw color": "Red",
+      "Cup color": "Brown",
+      "Random item": "Angel wings",
+      "Eyewear": "None",
+      "Cup Number": "2"
+    }
+  },
+  {
+    "id": "6d58b5fcfa9879ba52c6bd52b39bcd00f5fb534f3ebf33952f97ed76a2fbafaci0",
+    "meta": {
+      "name": "Teagan #3"
+    },
+    "attributes": {
+      "Background": "Caramel",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Pixel",
+      "Straw color": "Pink",
+      "Cup color": "CrUNO",
+      "Random item": "Angel wings",
+      "Eyewear": "None",
+      "Cup Number": "3"
+    }
+  },
+  {
+    "id": "a545b26f7820c8433025a4e87f9805c59a72557e33403345e41d6c062ec212c4i0",
+    "meta": {
+      "name": "Haven #4"
+    },
+    "attributes": {
+      "Background": "Sandy yellow",
+      "Jewelry": "None",
+      "Mouth": "Fangs",
+      "Eyes": "Focused",
+      "Straw color": "Red",
+      "Cup color": "Zebra",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "4"
+    }
+  },
+  {
+    "id": "6540d46da4db77bbb81eda6ef46063aad80168cc5eaee064c335ed455c7d3fddi0",
+    "meta": {
+      "name": "Ash #5"
+    },
+    "attributes": {
+      "Background": "Ethscriptions",
+      "Jewelry": "None",
+      "Mouth": "Fangs",
+      "Eyes": "Splatter",
+      "Straw color": "Pink",
+      "Cup color": "White",
+      "Random item": "Gold bandana",
+      "Eyewear": "None",
+      "Cup Number": "5"
+    }
+  },
+  {
+    "id": "31b1bc3301e0b69b81607c78e3ac5159fa4c56c93c439c883dd1ca67a14edd2di0",
+    "meta": {
+      "name": "Eden #6"
+    },
+    "attributes": {
+      "Background": "Gray",
+      "Jewelry": "None",
+      "Mouth": "Smoking",
+      "Eyes": "Stars",
+      "Straw color": "Yellow",
+      "Cup color": "Classic",
+      "Random item": "Crown",
+      "Eyewear": "None",
+      "Cup Number": "6"
+    }
+  },
+  {
+    "id": "8f36214e5e583a8607540e2d526b8eca53c4acbb8f6b255aa340a2695c218b11i0",
+    "meta": {
+      "name": "Timmy #7"
+    },
+    "attributes": {
+      "Background": "Yellow",
+      "Jewelry": "None",
+      "Mouth": "Zombie",
+      "Eyes": "Splatter",
+      "Straw color": "Orange",
+      "Cup color": "Dirty yellow",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "7"
+    }
+  },
+  {
+    "id": "dc43308386d54f5414ecc26d28a4404ee688e0f318d3e099ae86510e19db52a5i0",
+    "meta": {
+      "name": "Kye #8"
+    },
+    "attributes": {
+      "Background": "Gray",
+      "Jewelry": "None",
+      "Mouth": "Zombie",
+      "Eyes": "Squares",
+      "Straw color": "Blue",
+      "Cup color": "Classic",
+      "Random item": "Crown",
+      "Eyewear": "None",
+      "Cup Number": "8"
+    }
+  },
+  {
+    "id": "b43d9ddd9a1d4a27857667099a570a0a100394f484c53956af258622670e6bc0i0",
+    "meta": {
+      "name": "Quade #9"
+    },
+    "attributes": {
+      "Background": "Mocha",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Red X",
+      "Straw color": "Blue",
+      "Cup color": "Gold foil",
+      "Random item": "Crown",
+      "Eyewear": "Crude",
+      "Cup Number": "9"
+    }
+  },
+  {
+    "id": "0025a658adaa76b41349e602bf735a47a1f71964adabe58430b644508c7cfcaei0",
+    "meta": {
+      "name": "Yuri #10"
+    },
+    "attributes": {
+      "Background": "Green",
+      "Jewelry": "None",
+      "Mouth": "Smirk",
+      "Eyes": "Stars",
+      "Straw color": "Orange",
+      "Cup color": "Gold foil",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "10"
+    }
+  },
+  {
+    "id": "6ab236e26a748a4135b0b4fda4cd4264c16a108a5dedc1aeb36ae4ee926799b3i0",
+    "meta": {
+      "name": "Fallon #11"
+    },
+    "attributes": {
+      "Background": "Peach",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Bushy",
+      "Straw color": "Orange",
+      "Cup color": "Gold foil",
+      "Random item": "Crown",
+      "Eyewear": "Reflector",
+      "Cup Number": "11"
+    }
+  },
+  {
+    "id": "6b7b3be796182e6156b2296bba79b63870df941d0932809a979acda29286224fi0",
+    "meta": {
+      "name": "Blaine #12"
+    },
+    "attributes": {
+      "Background": "Peach",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Bushy",
+      "Straw color": "Blue",
+      "Cup color": "White",
+      "Random item": "Dreadlocks",
+      "Eyewear": "None",
+      "Cup Number": "12"
+    }
+  },
+  {
+    "id": "322bc81fc94ab051b68a1cf0f5ecfda94aa9d17060855a9e48929d537ca8abc4i0",
+    "meta": {
+      "name": "Pax #13"
+    },
+    "attributes": {
+      "Background": "Sun",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Blue flame",
+      "Straw color": "Blue",
+      "Cup color": "Yellow",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "13"
+    }
+  },
+  {
+    "id": "8c3738e8f6f6e98f597607d4a32570d916105b20c8662fe8f1c2987eac18cac1i0",
+    "meta": {
+      "name": "Casey #14"
+    },
+    "attributes": {
+      "Background": "Dull green",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Doge",
+      "Straw color": "Red",
+      "Cup color": "Lime green",
+      "Random item": "Angel wings",
+      "Eyewear": "None",
+      "Cup Number": "14"
+    }
+  },
+  {
+    "id": "d19c41dadeff2592d101c5c7d4d713c6a8c7e7a70e24c3ded182bc0b8dca994ci0",
+    "meta": {
+      "name": "Kieran #15"
+    },
+    "attributes": {
+      "Background": "Solana",
+      "Jewelry": "None",
+      "Mouth": "Zombie",
+      "Eyes": "Pretty",
+      "Straw color": "Red",
+      "Cup color": "Gray",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "15"
+    }
+  },
+  {
+    "id": "61c35f75f525847d55eb7fe76040992ac6fd7b69573a8d0b6baac83359c5c1d9i0",
+    "meta": {
+      "name": "Izar #16"
+    },
+    "attributes": {
+      "Background": "Dull green",
+      "Jewelry": "None",
+      "Mouth": "Braceface",
+      "Eyes": "Bitcoin",
+      "Straw color": "Blue",
+      "Cup color": "Brown",
+      "Random item": "Dark red bandana",
+      "Eyewear": "None",
+      "Cup Number": "16"
+    }
+  },
+  {
+    "id": "19a34263e1c823428544d346cc3793a7927a537dae782c16e5b490b8692431cci0",
+    "meta": {
+      "name": "Zuri #17"
+    },
+    "attributes": {
+      "Background": "Red shade",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Blue flame",
+      "Straw color": "Blue",
+      "Cup color": "Purple",
+      "Random item": "Angel wings",
+      "Eyewear": "None",
+      "Cup Number": "17"
+    }
+  },
+  {
+    "id": "0da68d8df49f03045d21454c03bc88a818ec0d2290185f80c5b7e9ae0af9413fi0",
+    "meta": {
+      "name": "Tavi #18"
+    },
+    "attributes": {
+      "Background": "Light gray",
+      "Jewelry": "None",
+      "Mouth": "Crude smile",
+      "Eyes": "Splatter",
+      "Straw color": "Pink",
+      "Cup color": "Lime green",
+      "Random item": "Orange bandana",
+      "Eyewear": "None",
+      "Cup Number": "18"
+    }
+  },
+  {
+    "id": "27501929fdc3602b70e6fea1cca84579b1279cddb8a80f2c190034e5d9d5fd2di0",
+    "meta": {
+      "name": "Noa #19"
+    },
+    "attributes": {
+      "Background": "Ethscriptions",
+      "Jewelry": "None",
+      "Mouth": "Crude smile",
+      "Eyes": "Splatter",
+      "Straw color": "Yellow",
+      "Cup color": "Rainbow",
+      "Random item": "Dreadlocks",
+      "Eyewear": "None",
+      "Cup Number": "19"
+    }
+  },
+  {
+    "id": "a95a3e3d9dc9a7d9cc00de3df579d2a69890ca72ecc309e988e6856c68b76011i0",
+    "meta": {
+      "name": "Zion #20"
+    },
+    "attributes": {
+      "Background": "Brown",
+      "Jewelry": "None",
+      "Mouth": "Kissy lips",
+      "Eyes": "Pretty",
+      "Straw color": "Blue",
+      "Cup color": "Classic",
+      "Random item": "Blue bandana",
+      "Eyewear": "None",
+      "Cup Number": "20"
+    }
+  },
+  {
+    "id": "77ff8fc4cc0420b591b2fd78ce0ad1dd37a5be37b163e843af8e20dfb241f57ai0",
+    "meta": {
+      "name": "Ellis #21"
+    },
+    "attributes": {
+      "Background": "Gray",
+      "Jewelry": "None",
+      "Mouth": "Kissy lips",
+      "Eyes": "Doge",
+      "Straw color": "Red",
+      "Cup color": "Blue",
+      "Random item": "Orange bandana",
+      "Eyewear": "None",
+      "Cup Number": "21"
+    }
+  },
+  {
+    "id": "3ad1ab21cb19de584f53c7771e208bf01bdbc85a93b9775afdbf43d27dd204d7i0",
+    "meta": {
+      "name": "Sage #22"
+    },
+    "attributes": {
+      "Background": "BTC orange",
+      "Jewelry": "None",
+      "Mouth": "Scream",
+      "Eyes": "Eth",
+      "Straw color": "Yellow",
+      "Cup color": "CrUNO",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "22"
+    }
+  },
+  {
+    "id": "7a15e872f70be74394a9624abbfb2baefdd31e6643e26c14795fc23f965a6e7ei0",
+    "meta": {
+      "name": "Pierre #23"
+    },
+    "attributes": {
+      "Background": "Pink",
+      "Jewelry": "None",
+      "Mouth": "Smirk",
+      "Eyes": "Triangle",
+      "Straw color": "Yellow",
+      "Cup color": "Blue",
+      "Random item": "Angel wings",
+      "Eyewear": "None",
+      "Cup Number": "23"
+    }
+  },
+  {
+    "id": "19c07f3804bd899d4a87cece7d7d63c59a8c272b1698cf694934ce70cf0a17cdi0",
+    "meta": {
+      "name": "Merritt #24"
+    },
+    "attributes": {
+      "Background": "Peach",
+      "Jewelry": "None",
+      "Mouth": "Frown",
+      "Eyes": "Bitcoin",
+      "Straw color": "Blue",
+      "Cup color": "Pink",
+      "Random item": "None",
+      "Eyewear": "Reflector",
+      "Cup Number": "24"
+    }
+  },
+  {
+    "id": "46d798b666851c0e72435466ce9778a5859a18a90f0ae59f76f48324038507f4i0",
+    "meta": {
+      "name": "Rocky #25"
+    },
+    "attributes": {
+      "Background": "Mocha",
+      "Jewelry": "None",
+      "Mouth": "Braceface",
+      "Eyes": "Splatter",
+      "Straw color": "Orange",
+      "Cup color": "Brown",
+      "Random item": "Dark red bandana",
+      "Eyewear": "None",
+      "Cup Number": "25"
+    }
+  },
+  {
+    "id": "20a97e44f790ba56e4aa964bf35fa1506a7ff93ef9611665734c62b9162ba4d0i0",
+    "meta": {
+      "name": "Lola #26"
+    },
+    "attributes": {
+      "Background": "Ethscriptions",
+      "Jewelry": "None",
+      "Mouth": "Smirk",
+      "Eyes": "Pretty",
+      "Straw color": "Blue",
+      "Cup color": "CrUNO",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "26"
+    }
+  },
+  {
+    "id": "33ec4f63928d1025a93338e55185015f9d0587e704bf8b766d231ffb43bef78ai0",
+    "meta": {
+      "name": "Zephyr #27"
+    },
+    "attributes": {
+      "Background": "Yellow",
+      "Jewelry": "None",
+      "Mouth": "Smoking",
+      "Eyes": "Focused",
+      "Straw color": "Red",
+      "Cup color": "Brown",
+      "Random item": "Angel wings",
+      "Eyewear": "None",
+      "Cup Number": "27"
+    }
+  },
+  {
+    "id": "bc4948c8360f8ff9a5ddee958bb79e4ff82d17ebf107dea0863c2427ac571372i0",
+    "meta": {
+      "name": "Paul #28"
+    },
+    "attributes": {
+      "Background": "Ethscriptions",
+      "Jewelry": "None",
+      "Mouth": "Braceface",
+      "Eyes": "Pretty",
+      "Straw color": "Blue",
+      "Cup color": "Distorted",
+      "Random item": "Angel wings",
+      "Eyewear": "None",
+      "Cup Number": "28"
+    }
+  },
+  {
+    "id": "6e6616d3cf0c2ee4b642ba2f28fff2fa8b2a6d067100cfe204c2576da9e840e1i0",
+    "meta": {
+      "name": "Terry #29"
+    },
+    "attributes": {
+      "Background": "Navy blue",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Stars",
+      "Straw color": "Red",
+      "Cup color": "Dirty yellow",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "29"
+    }
+  },
+  {
+    "id": "93ea7e60bc95cf6100d9788b0d451c40e1033920836af1eeb8ffb8cd531749fbi0",
+    "meta": {
+      "name": "Brian #30"
+    },
+    "attributes": {
+      "Background": "Baby blue",
+      "Jewelry": "None",
+      "Mouth": "Frown",
+      "Eyes": "Bushy",
+      "Straw color": "Red",
+      "Cup color": "Red",
+      "Random item": "Orange bandana",
+      "Eyewear": "None",
+      "Cup Number": "30"
+    }
+  },
+  {
+    "id": "c6126383c6026a05d1b0ec2a95894a476ce2bd199b610d9b08436baa61547763i0",
+    "meta": {
+      "name": "Gio #31"
+    },
+    "attributes": {
+      "Background": "Gray",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Bitcoin",
+      "Straw color": "Yellow",
+      "Cup color": "RWB",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "31"
+    }
+  },
+  {
+    "id": "7c74afdd37918e113d015e383915fd6959d65c90a4a813a986637acc1a5337cci0",
+    "meta": {
+      "name": "Toby #32"
+    },
+    "attributes": {
+      "Background": "Sun",
+      "Jewelry": "None",
+      "Mouth": "Wild teeth",
+      "Eyes": "Fire emoji",
+      "Straw color": "Orange",
+      "Cup color": "Green",
+      "Random item": "Dreadlocks",
+      "Eyewear": "None",
+      "Cup Number": "32"
+    }
+  },
+  {
+    "id": "16d5fd5f45e7d4eaf15968fbc5912389990b21a06e1f1fe3ce5d50804b26fb34i0",
+    "meta": {
+      "name": "Hollis #33"
+    },
+    "attributes": {
+      "Background": "Fire red",
+      "Jewelry": "None",
+      "Mouth": "Wild teeth",
+      "Eyes": "Focused",
+      "Straw color": "Red",
+      "Cup color": "Infared",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "33"
+    }
+  },
+  {
+    "id": "5564656d5fc591f22cbd70aaf40fe1f19a725df4df8882ee73dde9f30de2923di0",
+    "meta": {
+      "name": "Daphne #34"
+    },
+    "attributes": {
+      "Background": "Gray",
+      "Jewelry": "None",
+      "Mouth": "Caution tape",
+      "Eyes": "Eth",
+      "Straw color": "Blue",
+      "Cup color": "Pink",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "34"
+    }
+  },
+  {
+    "id": "8b9a45e677da214901e23c254ab239bd88c1969d4da4d1cf6efd6ec1db295fd8i0",
+    "meta": {
+      "name": "Cleo #35"
+    },
+    "attributes": {
+      "Background": "Plain blue",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Triangle",
+      "Straw color": "Orange",
+      "Cup color": "Gold foil",
+      "Random item": "Blue bandana",
+      "Eyewear": "None",
+      "Cup Number": "35"
+    }
+  },
+  {
+    "id": "bd98e8e1149a74952c73781fe259d1b612dcad891aed3184bd0c35bb958e63e8i0",
+    "meta": {
+      "name": "Keegan #36"
+    },
+    "attributes": {
+      "Background": "Red shade",
+      "Jewelry": "None",
+      "Mouth": "Fangs",
+      "Eyes": "Splatter",
+      "Straw color": "Blue",
+      "Cup color": "Gold foil",
+      "Random item": "None",
+      "Eyewear": "Eye patch",
+      "Cup Number": "36"
+    }
+  },
+  {
+    "id": "5dc71aa9b5b65f50edc1fd4593d0cb2f2823ec8a0d2d869cd7640cbdbdf2c5b7i0",
+    "meta": {
+      "name": "Nova #37"
+    },
+    "attributes": {
+      "Background": "Peach",
+      "Jewelry": "None",
+      "Mouth": "Frown",
+      "Eyes": "Eth",
+      "Straw color": "Blue",
+      "Cup color": "Gold foil",
+      "Random item": "Dreadlocks",
+      "Eyewear": "None",
+      "Cup Number": "37"
+    }
+  },
+  {
+    "id": "e63ee5a853cdcf23c4b02229f664da3745f03ba918a791165983448099fc390ai0",
+    "meta": {
+      "name": "Elliot #38"
+    },
+    "attributes": {
+      "Background": "Navy blue",
+      "Jewelry": "None",
+      "Mouth": "Smoking",
+      "Eyes": "Eth",
+      "Straw color": "Yellow",
+      "Cup color": "Army green",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "38"
+    }
+  },
+  {
+    "id": "a549070529922534741af9b82f047a2bee93211198e8044c566ea734fce4de1ci0",
+    "meta": {
+      "name": "Skyler #39"
+    },
+    "attributes": {
+      "Background": "Baby blue",
+      "Jewelry": "None",
+      "Mouth": "Smirk",
+      "Eyes": "Pretty",
+      "Straw color": "Blue",
+      "Cup color": "Brown",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "39"
+    }
+  },
+  {
+    "id": "23e629900fea55cfcb6e54939e7c4827761021692cb3ee50a0d303126f981c35i0",
+    "meta": {
+      "name": "Oakley #40"
+    },
+    "attributes": {
+      "Background": "Peach",
+      "Jewelry": "None",
+      "Mouth": "Scream",
+      "Eyes": "Bitcoin",
+      "Straw color": "Red",
+      "Cup color": "OG cup",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "40"
+    }
+  },
+  {
+    "id": "6272b7e69cf5087d8232b08d45fa0677c90ce989126f50e0292f89ca747a8950i0",
+    "meta": {
+      "name": "Clarke #41"
+    },
+    "attributes": {
+      "Background": "Navy blue",
+      "Jewelry": "None",
+      "Mouth": "Smirk",
+      "Eyes": "Fire emoji",
+      "Straw color": "Orange",
+      "Cup color": "White",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "41"
+    }
+  },
+  {
+    "id": "7298bdb1044a35c763df81fb0f7ddff08c6d06f0f4099539e496746111e932bfi0",
+    "meta": {
+      "name": "Jamie #42"
+    },
+    "attributes": {
+      "Background": "Dull green",
+      "Jewelry": "None",
+      "Mouth": "Smirk",
+      "Eyes": "Stars",
+      "Straw color": "Pink",
+      "Cup color": "Blue jean",
+      "Random item": "Dark red bandana",
+      "Eyewear": "None",
+      "Cup Number": "42"
+    }
+  },
+  {
+    "id": "2e08b0b4cca2115fdb034d5c88ad971280a42fe97fc7d68c207f7d65d533789bi0",
+    "meta": {
+      "name": "Storm #43"
+    },
+    "attributes": {
+      "Background": "Dull green",
+      "Jewelry": "None",
+      "Mouth": "Kissy lips",
+      "Eyes": "Triangle",
+      "Straw color": "Red",
+      "Cup color": "Classic",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "43"
+    }
+  },
+  {
+    "id": "4c78cb7f7b3eb057c8619523b485f2109232548a42c2c2298e429b19d893a95di0",
+    "meta": {
+      "name": "Darian #44"
+    },
+    "attributes": {
+      "Background": "Kinda cream",
+      "Jewelry": "None",
+      "Mouth": "Tongue out",
+      "Eyes": "Triangle",
+      "Straw color": "Yellow",
+      "Cup color": "Zima blue",
+      "Random item": "Crown",
+      "Eyewear": "None",
+      "Cup Number": "44"
+    }
+  },
+  {
+    "id": "df2b3070cbd9c2ed6424a6e1f6b0aa92fd3378d6a4e6e725c93076911b13ee5ei0",
+    "meta": {
+      "name": "Donna #45"
+    },
+    "attributes": {
+      "Background": "Navy blue",
+      "Jewelry": "None",
+      "Mouth": "Kissy lips",
+      "Eyes": "Pretty",
+      "Straw color": "Red",
+      "Cup color": "Dirty yellow",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "45"
+    }
+  },
+  {
+    "id": "6e55e7be3a0f2ad92c95e2d4b6239269bd63fa1fff250ac7ba7eb78fbc28bda7i0",
+    "meta": {
+      "name": "Orion #46"
+    },
+    "attributes": {
+      "Background": "Mocha",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Splatter",
+      "Straw color": "Orange",
+      "Cup color": "Yellow",
+      "Random item": "Dark red bandana",
+      "Eyewear": "None",
+      "Cup Number": "46"
+    }
+  },
+  {
+    "id": "045db95dae5416170620d47f229303ece21bf07a6c33178b5e91a283da1ec6ebi0",
+    "meta": {
+      "name": "Marlow #47"
+    },
+    "attributes": {
+      "Background": "Sandy yellow",
+      "Jewelry": "None",
+      "Mouth": "Caution tape",
+      "Eyes": "Googly",
+      "Straw color": "Red",
+      "Cup color": "RWB",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "47"
+    }
+  },
+  {
+    "id": "844505a18816556430739dd9346eee1c6f97cf049953229a472f2589b2c6fb6fi0",
+    "meta": {
+      "name": "Rene #48"
+    },
+    "attributes": {
+      "Background": "Dull green",
+      "Jewelry": "None",
+      "Mouth": "Scream",
+      "Eyes": "Splatter",
+      "Straw color": "Orange",
+      "Cup color": "Blue jean",
+      "Random item": "None",
+      "Eyewear": "3D",
+      "Cup Number": "48"
+    }
+  },
+  {
+    "id": "9c9c6918991be3b335bbf92005e97723d6b7de2e406c0a7bf7aab6a2e0f7d960i0",
+    "meta": {
+      "name": "Finley #49"
+    },
+    "attributes": {
+      "Background": "Sandy yellow",
+      "Jewelry": "None",
+      "Mouth": "Smirk",
+      "Eyes": "Squares",
+      "Straw color": "Orange",
+      "Cup color": "Crudeboy",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "49"
+    }
+  },
+  {
+    "id": "9559e7687a07bb9818bfd101129020cfe35db5db963ce328d44bb7f5a6ef962bi0",
+    "meta": {
+      "name": "Arden #50"
+    },
+    "attributes": {
+      "Background": "Brown",
+      "Jewelry": "None",
+      "Mouth": "Frown",
+      "Eyes": "Squares",
+      "Straw color": "Orange",
+      "Cup color": "Blue",
+      "Random item": "Crown",
+      "Eyewear": "None",
+      "Cup Number": "50"
+    }
+  },
+  {
+    "id": "81c31baad4de248bc7acf6002909e84230b1c9ffacfac5369f681a9bad1e4d2di0",
+    "meta": {
+      "name": "Zeke #51"
+    },
+    "attributes": {
+      "Background": "BTC orange",
+      "Jewelry": "Gold chain",
+      "Mouth": "Zombie",
+      "Eyes": "Pretty",
+      "Straw color": "Red",
+      "Cup color": "Dirty yellow",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "51"
+    }
+  },
+  {
+    "id": "ba1222ff6249f5a9b0b0e28f23f48c09cda6d81612bf6f096d6f0a1a497c0071i0",
+    "meta": {
+      "name": "Ollie #52"
+    },
+    "attributes": {
+      "Background": "BTC orange",
+      "Jewelry": "None",
+      "Mouth": "Wild teeth",
+      "Eyes": "Googly",
+      "Straw color": "Blue",
+      "Cup color": "Distorted",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "52"
+    }
+  },
+  {
+    "id": "3c1deac5ab899a9dcf57f9bff084dcb66d53c2385788b10457cec80aa5177230i0",
+    "meta": {
+      "name": "Kai #53"
+    },
+    "attributes": {
+      "Background": "Berry blue",
+      "Jewelry": "None",
+      "Mouth": "Kissy lips",
+      "Eyes": "Googly",
+      "Straw color": "Blue",
+      "Cup color": "Zebra",
+      "Random item": "None",
+      "Eyewear": "3D",
+      "Cup Number": "53"
+    }
+  },
+  {
+    "id": "06eb55882d50a5ccc2b14bb585a6a59817feea6481b11aa3fe1e0793cf74be78i0",
+    "meta": {
+      "name": "Peyton #54"
+    },
+    "attributes": {
+      "Background": "Caramel",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Bitcoin",
+      "Straw color": "Orange",
+      "Cup color": "White",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "54"
+    }
+  },
+  {
+    "id": "dc807f9d93e8136d7143fae0fab48b6d9f9e2341c4385f3744eb46702151165ai0",
+    "meta": {
+      "name": "Jasper #55"
+    },
+    "attributes": {
+      "Background": "Brown",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Stars",
+      "Straw color": "Yellow",
+      "Cup color": "CrUNO",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "55"
+    }
+  },
+  {
+    "id": "640a758bdd86b3bdc932432759d17faacae7a6293c3babae731246ee2a4d15f9i0",
+    "meta": {
+      "name": "Izzy #56"
+    },
+    "attributes": {
+      "Background": "Fire red",
+      "Jewelry": "None",
+      "Mouth": "Zombie",
+      "Eyes": "Squares",
+      "Straw color": "Yellow",
+      "Cup color": "Crudeboy",
+      "Random item": "Crown",
+      "Eyewear": "None",
+      "Cup Number": "56"
+    }
+  },
+  {
+    "id": "200add4019a7b9f53e11ec78f373b44960318003c7499b7e0c3455f6d1f0ebd4i0",
+    "meta": {
+      "name": "Rob #57"
+    },
+    "attributes": {
+      "Background": "Berry blue",
+      "Jewelry": "Gold chain",
+      "Mouth": "Frown",
+      "Eyes": "Triangle",
+      "Straw color": "Red",
+      "Cup color": "Gold foil",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "57"
+    }
+  },
+  {
+    "id": "06f453fa4542c3255fa38ee66b570efeaa3caed95a2bd853f3e5253d0be93031i0",
+    "meta": {
+      "name": "Daniel #58"
+    },
+    "attributes": {
+      "Background": "Sandy yellow",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Splatter",
+      "Straw color": "Blue",
+      "Cup color": "Purple",
+      "Random item": "Blue bandana",
+      "Eyewear": "None",
+      "Cup Number": "58"
+    }
+  },
+  {
+    "id": "2f47d09bac0d6fe56349eb7cc7008e96a7efbd0c9028771e330a72d6401e3a22i0",
+    "meta": {
+      "name": "Amanda #59"
+    },
+    "attributes": {
+      "Background": "Aqua purple",
+      "Jewelry": "None",
+      "Mouth": "Zombie",
+      "Eyes": "Pretty",
+      "Straw color": "Pink",
+      "Cup color": "White",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "59"
+    }
+  },
+  {
+    "id": "f24f26251b9b2846271a65bfdcd75a7b2cfcf29b8d8c06f0070769f9be570548i0",
+    "meta": {
+      "name": "Wren #60"
+    },
+    "attributes": {
+      "Background": "Dull green",
+      "Jewelry": "None",
+      "Mouth": "Smoking",
+      "Eyes": "Splatter",
+      "Straw color": "Orange",
+      "Cup color": "RWB",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "60"
+    }
+  },
+  {
+    "id": "5f4ab7e361b130606adc77d7aa645454f0a4fb02c06faca96d9822513a5fd0c1i0",
+    "meta": {
+      "name": "Gentry #61"
+    },
+    "attributes": {
+      "Background": "Kinda cream",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Baby blues",
+      "Straw color": "Blue",
+      "Cup color": "QR",
+      "Random item": "Orange bandana",
+      "Eyewear": "None",
+      "Cup Number": "61"
+    }
+  },
+  {
+    "id": "5bdecce56d3ffbff831eb770f34b9670012ef13128cc5d7df598962e614c70a8i0",
+    "meta": {
+      "name": "Frankie #62"
+    },
+    "attributes": {
+      "Background": "Light gray",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Doge",
+      "Straw color": "Pink",
+      "Cup color": "Blue",
+      "Random item": "Gold bandana",
+      "Eyewear": "None",
+      "Cup Number": "62"
+    }
+  },
+  {
+    "id": "ce9d867cc7ff5844942f3784ff815d7e3804a2ffb0c65741fdb1fe051681354bi0",
+    "meta": {
+      "name": "Wynn #63"
+    },
+    "attributes": {
+      "Background": "LA purple",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Splatter",
+      "Straw color": "Pink",
+      "Cup color": "Crudeboy joker",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "63"
+    }
+  },
+  {
+    "id": "5320e0e70428098f6503bb5224069eb1a123862598a252268dcea9156c91501ei0",
+    "meta": {
+      "name": "Kian #64"
+    },
+    "attributes": {
+      "Background": "Aqua purple",
+      "Jewelry": "None",
+      "Mouth": "Kissy lips",
+      "Eyes": "Eth",
+      "Straw color": "Blue",
+      "Cup color": "Zebra",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "64"
+    }
+  },
+  {
+    "id": "a4b900adb90f681cd71215de44328d352b0a0b02642dd01eb546e42b673b829ei0",
+    "meta": {
+      "name": "Ari #65"
+    },
+    "attributes": {
+      "Background": "Caramel",
+      "Jewelry": "None",
+      "Mouth": "Wild teeth",
+      "Eyes": "Doge",
+      "Straw color": "Pink",
+      "Cup color": "Gold foil",
+      "Random item": "Dark red bandana",
+      "Eyewear": "None",
+      "Cup Number": "65"
+    }
+  },
+  {
+    "id": "e9d60c61597194611a3d4795698c7e47f349c78a1db3807f041ee56e055ad5bdi0",
+    "meta": {
+      "name": "Greer #66"
+    },
+    "attributes": {
+      "Background": "Berry blue",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Triangle",
+      "Straw color": "Blue",
+      "Cup color": "Classic",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "66"
+    }
+  },
+  {
+    "id": "5613ed6d40354658981661174bed950d30dda956e1e3941f40c29d54eddb6a0di0",
+    "meta": {
+      "name": "Vail #67"
+    },
+    "attributes": {
+      "Background": "Plain blue",
+      "Jewelry": "None",
+      "Mouth": "Zombie",
+      "Eyes": "Fire emoji",
+      "Straw color": "Orange",
+      "Cup color": "Crudeboy joker",
+      "Random item": "Angel wings",
+      "Eyewear": "None",
+      "Cup Number": "67"
+    }
+  },
+  {
+    "id": "5f19fd34cca3da6fbfefda7e95c5dfd63551a6ff88923e5adaef9d4fab5900d7i0",
+    "meta": {
+      "name": "Ronnie #68"
+    },
+    "attributes": {
+      "Background": "Solana",
+      "Jewelry": "None",
+      "Mouth": "Braceface",
+      "Eyes": "Baby blues",
+      "Straw color": "Blue",
+      "Cup color": "Pink",
+      "Random item": "None",
+      "Eyewear": "3D",
+      "Cup Number": "68"
+    }
+  },
+  {
+    "id": "67a557bf369dd0168bf0d09fe2e0b80777fd7f89ad374763440a89e58d0db11ei0",
+    "meta": {
+      "name": "Emery #69"
+    },
+    "attributes": {
+      "Background": "Mocha",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Bushy",
+      "Straw color": "Pink",
+      "Cup color": "Infared",
+      "Random item": "Dark red bandana",
+      "Eyewear": "None",
+      "Cup Number": "69"
+    }
+  },
+  {
+    "id": "2af15e305c895ca2d75f8dd0e255dbf7a38cae96a0b8afeaa238c55876c9b73ci0",
+    "meta": {
+      "name": "Vesper #70"
+    },
+    "attributes": {
+      "Background": "Yellow",
+      "Jewelry": "None",
+      "Mouth": "Caution tape",
+      "Eyes": "Splatter",
+      "Straw color": "Blue",
+      "Cup color": "Purple",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "70"
+    }
+  },
+  {
+    "id": "1d5ddba0ef2a3825c66c732eb91b6a5648058333ce5cfdba37b8ca487e551eeci0",
+    "meta": {
+      "name": "Aaron #71"
+    },
+    "attributes": {
+      "Background": "Solana",
+      "Jewelry": "Gold chain",
+      "Mouth": "Smirk",
+      "Eyes": "Triangle",
+      "Straw color": "Red",
+      "Cup color": "Infared",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "71"
+    }
+  },
+  {
+    "id": "5772bddb92882fefc67d6b4ca3f5d1f9ae1ca31cff5cf7a40956448937caf410i0",
+    "meta": {
+      "name": "Quin #72"
+    },
+    "attributes": {
+      "Background": "Red shade",
+      "Jewelry": "None",
+      "Mouth": "Smirk",
+      "Eyes": "Pixel",
+      "Straw color": "Yellow",
+      "Cup color": "OG cup",
+      "Random item": "None",
+      "Eyewear": "Crude",
+      "Cup Number": "72"
+    }
+  },
+  {
+    "id": "1c1fe1e0517b5fbfed94e58fc5c221621860cc77dd295d3e05b87a8c46f927adi0",
+    "meta": {
+      "name": "Johnny #73"
+    },
+    "attributes": {
+      "Background": "BTC orange",
+      "Jewelry": "None",
+      "Mouth": "Zombie",
+      "Eyes": "Squares",
+      "Straw color": "Pink",
+      "Cup color": "OG cup",
+      "Random item": "Blue bandana",
+      "Eyewear": "None",
+      "Cup Number": "73"
+    }
+  },
+  {
+    "id": "85e199e190a8326e8a55dc24faf9ebdd00a7856f5679ad3ce6cc6b11f04fa3a2i0",
+    "meta": {
+      "name": "Winter #74"
+    },
+    "attributes": {
+      "Background": "Light gray",
+      "Jewelry": "None",
+      "Mouth": "Wild teeth",
+      "Eyes": "Triangle",
+      "Straw color": "Blue",
+      "Cup color": "Blue jean",
+      "Random item": "None",
+      "Eyewear": "Crude",
+      "Cup Number": "74"
+    }
+  },
+  {
+    "id": "5fa6697b77140f045be71a6654d35e3284c50d9e958e1a419f1fec42c532dc0ci0",
+    "meta": {
+      "name": "Noel #75"
+    },
+    "attributes": {
+      "Background": "Solana",
+      "Jewelry": "None",
+      "Mouth": "Fangs",
+      "Eyes": "Triangle",
+      "Straw color": "Blue",
+      "Cup color": "Yellow",
+      "Random item": "Orange bandana",
+      "Eyewear": "None",
+      "Cup Number": "75"
+    }
+  },
+  {
+    "id": "ca96b2a9a5bdaf5c76d3f8e89fae1978b5d612e6a689e98ee8f03df0eb20036ei0",
+    "meta": {
+      "name": "Joss #76"
+    },
+    "attributes": {
+      "Background": "Aqua purple",
+      "Jewelry": "None",
+      "Mouth": "Smirk",
+      "Eyes": "Baby blues",
+      "Straw color": "Yellow",
+      "Cup color": "QR",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "76"
+    }
+  },
+  {
+    "id": "5259111cbd5f115927c3d8997f24e3b1ff933109239ba4c7f2d9330d5439ec3ai0",
+    "meta": {
+      "name": "Wylie #77"
+    },
+    "attributes": {
+      "Background": "Sun",
+      "Jewelry": "Gold chain",
+      "Mouth": "Frown",
+      "Eyes": "Bitcoin",
+      "Straw color": "Red",
+      "Cup color": "CrUNO",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "77"
+    }
+  },
+  {
+    "id": "f18c5e40be15b0da50ea85ee42879385d985e801fdf85e4389684bc0036c70ebi0",
+    "meta": {
+      "name": "Frost #78"
+    },
+    "attributes": {
+      "Background": "Plain blue",
+      "Jewelry": "None",
+      "Mouth": "Smirk",
+      "Eyes": "Red X",
+      "Straw color": "Orange",
+      "Cup color": "Dirty yellow",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "78"
+    }
+  },
+  {
+    "id": "e3e79f2be769243707bcce0e363f5bd826f350a39406cd8139693d77d16ed22bi0",
+    "meta": {
+      "name": "Micah #79"
+    },
+    "attributes": {
+      "Background": "Baby blue",
+      "Jewelry": "Gold chain",
+      "Mouth": "Braceface",
+      "Eyes": "Focused",
+      "Straw color": "Blue",
+      "Cup color": "Purple",
+      "Random item": "None",
+      "Eyewear": "Crude",
+      "Cup Number": "79"
+    }
+  },
+  {
+    "id": "da169dea1fabfd04800b59a64f2b3c36b49dc4f59ea80f9d23e217ba415f5306i0",
+    "meta": {
+      "name": "Haze #80"
+    },
+    "attributes": {
+      "Background": "LA purple",
+      "Jewelry": "Gold chain",
+      "Mouth": "Braceface",
+      "Eyes": "Squares",
+      "Straw color": "Red",
+      "Cup color": "Purple",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "80"
+    }
+  },
+  {
+    "id": "5d706b2930c8d2e675fe9c203b8d888304493d74c5bc107fc2d30545bba70beei0",
+    "meta": {
+      "name": "River #81"
+    },
+    "attributes": {
+      "Background": "Gray",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Baby blues",
+      "Straw color": "Pink",
+      "Cup color": "OG cup",
+      "Random item": "Gold bandana",
+      "Eyewear": "None",
+      "Cup Number": "81"
+    }
+  },
+  {
+    "id": "30d466eecd6283a5926e7d47fad2f1d70a37fea03eaf6ae9a3e4eb0563853990i0",
+    "meta": {
+      "name": "Dakota #82"
+    },
+    "attributes": {
+      "Background": "Gray",
+      "Jewelry": "None",
+      "Mouth": "Fangs",
+      "Eyes": "Focused",
+      "Straw color": "Pink",
+      "Cup color": "Rainbow",
+      "Random item": "Dark red bandana",
+      "Eyewear": "None",
+      "Cup Number": "82"
+    }
+  },
+  {
+    "id": "7b163ed196a7f3771236d6a22feb2807ca6e961bc3454ef215260cadb1c05c45i0",
+    "meta": {
+      "name": "Luka #83"
+    },
+    "attributes": {
+      "Background": "Plain blue",
+      "Jewelry": "None",
+      "Mouth": "Wild teeth",
+      "Eyes": "Pixel",
+      "Straw color": "Pink",
+      "Cup color": "Lime green",
+      "Random item": "Orange bandana",
+      "Eyewear": "None",
+      "Cup Number": "83"
+    }
+  },
+  {
+    "id": "c12273f8a6ef3aee57b6f57fb8c9f970b6624ff2829dde61aa36231db1a10341i0",
+    "meta": {
+      "name": "Avery #84"
+    },
+    "attributes": {
+      "Background": "Solana",
+      "Jewelry": "None",
+      "Mouth": "Tongue out",
+      "Eyes": "Fire emoji",
+      "Straw color": "Yellow",
+      "Cup color": "Distorted",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "84"
+    }
+  },
+  {
+    "id": "27d6e7a922f01e882071ad716e16a118536f678df9c97d9cc976803491e79c92i0",
+    "meta": {
+      "name": "Jory #85"
+    },
+    "attributes": {
+      "Background": "Chili green",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Stars",
+      "Straw color": "Orange",
+      "Cup color": "Pink",
+      "Random item": "Dark red bandana",
+      "Eyewear": "None",
+      "Cup Number": "85"
+    }
+  },
+  {
+    "id": "20891281bf06d360bdd166882fba9eb17a177684b1b11b25854cef1fbf7b1fa8i0",
+    "meta": {
+      "name": "Billy #86"
+    },
+    "attributes": {
+      "Background": "Ethscriptions",
+      "Jewelry": "None",
+      "Mouth": "Caution tape",
+      "Eyes": "Bushy",
+      "Straw color": "Yellow",
+      "Cup color": "Red",
+      "Random item": "Dreadlocks",
+      "Eyewear": "None",
+      "Cup Number": "86"
+    }
+  },
+  {
+    "id": "4969815ae801dd57cd11192a2990d466508f1e93889712dc9552b2b38145a477i0",
+    "meta": {
+      "name": "Loreal #87"
+    },
+    "attributes": {
+      "Background": "Mocha",
+      "Jewelry": "None",
+      "Mouth": "Zombie",
+      "Eyes": "Pretty",
+      "Straw color": "Blue",
+      "Cup color": "Rainbow",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "87"
+    }
+  },
+  {
+    "id": "e574b549f9677d8589a54602b37458896586737ba77edfd3427f7415022d5b55i0",
+    "meta": {
+      "name": "Presley #88"
+    },
+    "attributes": {
+      "Background": "Dull green",
+      "Jewelry": "None",
+      "Mouth": "Wild teeth",
+      "Eyes": "Blue flame",
+      "Straw color": "Blue",
+      "Cup color": "Infared",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "88"
+    }
+  },
+  {
+    "id": "8130a263cf8bdec58088d8fd5f43075ba1b110739bf8d94b44ebb226d1ea167bi0",
+    "meta": {
+      "name": "Jace #89"
+    },
+    "attributes": {
+      "Background": "Sky blue",
+      "Jewelry": "None",
+      "Mouth": "Smoking",
+      "Eyes": "Triangle",
+      "Straw color": "Yellow",
+      "Cup color": "Purple",
+      "Random item": "Dark red bandana",
+      "Eyewear": "None",
+      "Cup Number": "89"
+    }
+  },
+  {
+    "id": "3327b2649775027da1751033869f696ac2ddaa36f84cf19d886b53ce0834d6bei0",
+    "meta": {
+      "name": "Eli #90"
+    },
+    "attributes": {
+      "Background": "Wine",
+      "Jewelry": "None",
+      "Mouth": "Braceface",
+      "Eyes": "Fire emoji",
+      "Straw color": "Pink",
+      "Cup color": "Infared",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "90"
+    }
+  },
+  {
+    "id": "35d41de1b9cff739964eae2fa1322954292c3b73a3294611c1b06d674838ad31i0",
+    "meta": {
+      "name": "Perry #91"
+    },
+    "attributes": {
+      "Background": "BTC orange",
+      "Jewelry": "None",
+      "Mouth": "Frown",
+      "Eyes": "Stars",
+      "Straw color": "Orange",
+      "Cup color": "Dirty yellow",
+      "Random item": "Dreadlocks",
+      "Eyewear": "Reflector",
+      "Cup Number": "91"
+    }
+  },
+  {
+    "id": "d152c8af56d2e6952d38640069ca3c400d96d7982d4ce2a08be4c50f2edcc747i0",
+    "meta": {
+      "name": "Arriana #92"
+    },
+    "attributes": {
+      "Background": "Light gray",
+      "Jewelry": "None",
+      "Mouth": "Scream",
+      "Eyes": "Pretty",
+      "Straw color": "Orange",
+      "Cup color": "Distorted",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "92"
+    }
+  },
+  {
+    "id": "decc9fa83bfa2ae733fb85c74f0d945e810a62c1f668046b3122a752ddd3399ei0",
+    "meta": {
+      "name": "Cory #93"
+    },
+    "attributes": {
+      "Background": "Ethscriptions",
+      "Jewelry": "None",
+      "Mouth": "Braceface",
+      "Eyes": "Pixel",
+      "Straw color": "Blue",
+      "Cup color": "Rainbow",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "93"
+    }
+  },
+  {
+    "id": "231600542db579a144ee50fad9bd731a3b3818ddcffa73570c11c8071bfb83eei0",
+    "meta": {
+      "name": "Drew #94"
+    },
+    "attributes": {
+      "Background": "Kinda cream",
+      "Jewelry": "None",
+      "Mouth": "Scream",
+      "Eyes": "Googly",
+      "Straw color": "Red",
+      "Cup color": "RWB",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "94"
+    }
+  },
+  {
+    "id": "9c986e05014d9c958de6de868a2efb9d45b48b23d6518ff7a81f5e970408d80ai0",
+    "meta": {
+      "name": "Campbell #95"
+    },
+    "attributes": {
+      "Background": "Sky blue",
+      "Jewelry": "None",
+      "Mouth": "Wild teeth",
+      "Eyes": "Triangle",
+      "Straw color": "Blue",
+      "Cup color": "Crudeboy",
+      "Random item": "Gold bandana",
+      "Eyewear": "None",
+      "Cup Number": "95"
+    }
+  },
+  {
+    "id": "4745c6e45bf0a94dc7b6995ed36c4412a64ddf0d3e04fe309be052524f2b15d9i0",
+    "meta": {
+      "name": "Ivory #96"
+    },
+    "attributes": {
+      "Background": "Chili green",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Blue flame",
+      "Straw color": "Yellow",
+      "Cup color": "OG cup",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "96"
+    }
+  },
+  {
+    "id": "2e15152b75724ad1921879176e56de7a46aa00deeba6e1aef7e3f7480dcdcad6i0",
+    "meta": {
+      "name": "Owen #97"
+    },
+    "attributes": {
+      "Background": "Fire red",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Bitcoin",
+      "Straw color": "Orange",
+      "Cup color": "Infared",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "97"
+    }
+  },
+  {
+    "id": "32133eea26024235254d4b74eb7883ef6c67b0afc16a749e52e2a84cd8c9d436i0",
+    "meta": {
+      "name": "Tory #98"
+    },
+    "attributes": {
+      "Background": "Baby blue",
+      "Jewelry": "None",
+      "Mouth": "Kissy lips",
+      "Eyes": "Googly",
+      "Straw color": "Red",
+      "Cup color": "White",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "98"
+    }
+  },
+  {
+    "id": "a5e87a76087f6d8a9f8ff8b78b6c988688cc3d85a8f197f9eb68e9ad3ded6ed4i0",
+    "meta": {
+      "name": "Karla #99"
+    },
+    "attributes": {
+      "Background": "Red shade",
+      "Jewelry": "None",
+      "Mouth": "Kissy lips",
+      "Eyes": "Pretty",
+      "Straw color": "Yellow",
+      "Cup color": "Brown",
+      "Random item": "Angel wings",
+      "Eyewear": "None",
+      "Cup Number": "99"
+    }
+  },
+  {
+    "id": "f3dcaa899d161b83ddcebcc0f78adc8f00f3c9e838e3b751641a59a9cc2a7e80i0",
+    "meta": {
+      "name": "Bobby #100"
+    },
+    "attributes": {
+      "Background": "Berry blue",
+      "Jewelry": "None",
+      "Mouth": "Tongue out",
+      "Eyes": "Stars",
+      "Straw color": "Red",
+      "Cup color": "Gold foil",
+      "Random item": "Angel wings",
+      "Eyewear": "None",
+      "Cup Number": "100"
+    }
+  },
+  {
+    "id": "c201d978f68c6fa1f8993e60fdca405f6a9d25a5251319c06d8a4a46e400acafi0",
+    "meta": {
+      "name": "Jordan #101"
+    },
+    "attributes": {
+      "Background": "Chili green",
+      "Jewelry": "None",
+      "Mouth": "Frown",
+      "Eyes": "Pretty",
+      "Straw color": "Red",
+      "Cup color": "Army green",
+      "Random item": "Angel wings",
+      "Eyewear": "None",
+      "Cup Number": "101"
+    }
+  },
+  {
+    "id": "d50fe48e7a4876f5efcd681d0c3c34d95649f96e5592d67776afc2a95e42b9c6i0",
+    "meta": {
+      "name": "Kit #102"
+    },
+    "attributes": {
+      "Background": "Light gray",
+      "Jewelry": "None",
+      "Mouth": "Frown",
+      "Eyes": "Pretty",
+      "Straw color": "Orange",
+      "Cup color": "Infared",
+      "Random item": "Dreadlocks",
+      "Eyewear": "3D",
+      "Cup Number": "102"
+    }
+  },
+  {
+    "id": "4ec6bfd6f9bcd3e542e2156274154a6de9f03464381b94422086aa8b6da597fbi0",
+    "meta": {
+      "name": "Jaden #103"
+    },
+    "attributes": {
+      "Background": "Mint green",
+      "Jewelry": "None",
+      "Mouth": "Smirk",
+      "Eyes": "Bushy",
+      "Straw color": "Pink",
+      "Cup color": "White",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "103"
+    }
+  },
+  {
+    "id": "925a8d1f9dc7ee85ced4af955248b879e9b60663c85ce9cd2691c8fc987686abi0",
+    "meta": {
+      "name": "Rory #104"
+    },
+    "attributes": {
+      "Background": "Dull green",
+      "Jewelry": "None",
+      "Mouth": "Smoking",
+      "Eyes": "Pixel",
+      "Straw color": "Orange",
+      "Cup color": "Distorted",
+      "Random item": "Orange bandana",
+      "Eyewear": "None",
+      "Cup Number": "104"
+    }
+  },
+  {
+    "id": "85f959146ab059632960105dae55e36401807f25a9d3187b8d3d26836804f824i0",
+    "meta": {
+      "name": "Misha #105"
+    },
+    "attributes": {
+      "Background": "Kinda cream",
+      "Jewelry": "None",
+      "Mouth": "Caution tape",
+      "Eyes": "Pixel",
+      "Straw color": "Red",
+      "Cup color": "Blue jean",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "105"
+    }
+  },
+  {
+    "id": "00b1b8969ad83880dbbce9370825ddc3b252fb1de12c74d890318d8d53ef01f0i0",
+    "meta": {
+      "name": "Harley #106"
+    },
+    "attributes": {
+      "Background": "Gray",
+      "Jewelry": "None",
+      "Mouth": "Frown",
+      "Eyes": "Bitcoin",
+      "Straw color": "Red",
+      "Cup color": "Dirty yellow",
+      "Random item": "Blue bandana",
+      "Eyewear": "None",
+      "Cup Number": "106"
+    }
+  },
+  {
+    "id": "ba740ba26ecadf65fa5a0a13002e97b0da29e0319cc8fcb0a59fc384d52b8a02i0",
+    "meta": {
+      "name": "Val #107"
+    },
+    "attributes": {
+      "Background": "Sandy yellow",
+      "Jewelry": "None",
+      "Mouth": "Fangs",
+      "Eyes": "Baby blues",
+      "Straw color": "Orange",
+      "Cup color": "Gold foil",
+      "Random item": "Orange bandana",
+      "Eyewear": "Eye patch",
+      "Cup Number": "107"
+    }
+  },
+  {
+    "id": "61e401800ea389edf6577d5047154cc1a35422f07f841902879edc94471aa125i0",
+    "meta": {
+      "name": "Leith #108"
+    },
+    "attributes": {
+      "Background": "Peach",
+      "Jewelry": "None",
+      "Mouth": "Kissy lips",
+      "Eyes": "Googly",
+      "Straw color": "Yellow",
+      "Cup color": "Lime green",
+      "Random item": "Crown",
+      "Eyewear": "None",
+      "Cup Number": "108"
+    }
+  },
+  {
+    "id": "eb0026b9713541af78432567f4b08703858d136e4e22433cd260c641d4597b3bi0",
+    "meta": {
+      "name": "Pace #109"
+    },
+    "attributes": {
+      "Background": "BTC orange",
+      "Jewelry": "None",
+      "Mouth": "Scream",
+      "Eyes": "Splatter",
+      "Straw color": "Red",
+      "Cup color": "OG cup",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "109"
+    }
+  },
+  {
+    "id": "9c058ff1bf64589b8919029ed4ffb73ee5ed11bcc496d178f2ee4000cc108b26i0",
+    "meta": {
+      "name": "Lane #110"
+    },
+    "attributes": {
+      "Background": "BTC orange",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Bitcoin",
+      "Straw color": "Pink",
+      "Cup color": "Zebra",
+      "Random item": "Blue bandana",
+      "Eyewear": "None",
+      "Cup Number": "110"
+    }
+  },
+  {
+    "id": "087627f01bd5a5fc2800a3c8b8f3778fb74248d023c66977e1974ca2ce993996i0",
+    "meta": {
+      "name": "Brett #111"
+    },
+    "attributes": {
+      "Background": "Kinda cream",
+      "Jewelry": "None",
+      "Mouth": "Smoking",
+      "Eyes": "Stars",
+      "Straw color": "Yellow",
+      "Cup color": "White",
+      "Random item": "Gold bandana",
+      "Eyewear": "None",
+      "Cup Number": "111"
+    }
+  },
+  {
+    "id": "e2d66e794d1ceb50c48b219b621152d4775eb10de281a4f935143d93dbf1aa88i0",
+    "meta": {
+      "name": "Indie #112"
+    },
+    "attributes": {
+      "Background": "Sandy yellow",
+      "Jewelry": "None",
+      "Mouth": "Scream",
+      "Eyes": "Red X",
+      "Straw color": "Orange",
+      "Cup color": "Purple",
+      "Random item": "Blue bandana",
+      "Eyewear": "None",
+      "Cup Number": "112"
+    }
+  },
+  {
+    "id": "8cf7a09bef604f0479710bc1a639a7671e08a0f75ff6d58f28211de2601830bfi0",
+    "meta": {
+      "name": "Q #113"
+    },
+    "attributes": {
+      "Background": "Green",
+      "Jewelry": "None",
+      "Mouth": "Fangs",
+      "Eyes": "Baby blues",
+      "Straw color": "Orange",
+      "Cup color": "Zima blue",
+      "Random item": "Dark red bandana",
+      "Eyewear": "None",
+      "Cup Number": "113"
+    }
+  },
+  {
+    "id": "110aaa47db77e3a0c013a95144cdab422d020dfdda83fe27af10bc73e711dde9i0",
+    "meta": {
+      "name": "Gray #114"
+    },
+    "attributes": {
+      "Background": "Light brown",
+      "Jewelry": "None",
+      "Mouth": "Zombie",
+      "Eyes": "Bushy",
+      "Straw color": "Blue",
+      "Cup color": "White",
+      "Random item": "Angel wings",
+      "Eyewear": "None",
+      "Cup Number": "114"
+    }
+  },
+  {
+    "id": "e23127861a0d0c895b87ace4a2cc919e548a90c18e707e5c52c4fecd00c04327i0",
+    "meta": {
+      "name": "Jass #115"
+    },
+    "attributes": {
+      "Background": "Baby blue",
+      "Jewelry": "None",
+      "Mouth": "Tongue out",
+      "Eyes": "Pretty",
+      "Straw color": "Red",
+      "Cup color": "Rainbow",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "115"
+    }
+  },
+  {
+    "id": "1cd477a7f54cba2dbf2c03c0479aa5bb4972836f56c6479e6c4f08dfb5832061i0",
+    "meta": {
+      "name": "Tatum #116"
+    },
+    "attributes": {
+      "Background": "Kinda cream",
+      "Jewelry": "None",
+      "Mouth": "Scream",
+      "Eyes": "Eth",
+      "Straw color": "Red",
+      "Cup color": "RWB",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "116"
+    }
+  },
+  {
+    "id": "01c8e6f2be5830d4ed224fca111374410f15a7543fcd5afa95b73a5eb0f2df99i0",
+    "meta": {
+      "name": "Cyan #117"
+    },
+    "attributes": {
+      "Background": "Pink",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Pixel",
+      "Straw color": "Pink",
+      "Cup color": "Green",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "117"
+    }
+  },
+  {
+    "id": "28e7ae5330e696f1efc3ec423fcc1d91b0ed774d3104a268a9aae8da3897fd63i0",
+    "meta": {
+      "name": "Jackson #118"
+    },
+    "attributes": {
+      "Background": "Dull green",
+      "Jewelry": "None",
+      "Mouth": "Frown",
+      "Eyes": "Pretty",
+      "Straw color": "Orange",
+      "Cup color": "CrUNO",
+      "Random item": "Blue bandana",
+      "Eyewear": "None",
+      "Cup Number": "118"
+    }
+  },
+  {
+    "id": "37000c97e0ae4b70e40b82bf59a9e34e09152e01ba3da404ad0d29b51bd4ad5ei0",
+    "meta": {
+      "name": "Morgan #119"
+    },
+    "attributes": {
+      "Background": "Light gray",
+      "Jewelry": "None",
+      "Mouth": "Fangs",
+      "Eyes": "Pixel",
+      "Straw color": "Blue",
+      "Cup color": "RWB",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "119"
+    }
+  },
+  {
+    "id": "44ab3dab8fc2e17edd14cd53c74d3c88a165918219fe42928e2e0bfb92ffad9bi0",
+    "meta": {
+      "name": "Aspen #120"
+    },
+    "attributes": {
+      "Background": "Gray",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Pixel",
+      "Straw color": "Yellow",
+      "Cup color": "Distorted",
+      "Random item": "Dreadlocks",
+      "Eyewear": "None",
+      "Cup Number": "120"
+    }
+  },
+  {
+    "id": "3750448d3b332c586daf1e9448eb1e424ace09adb66e421f1cb572c16d847c80i0",
+    "meta": {
+      "name": "Bailey #121"
+    },
+    "attributes": {
+      "Background": "Sandy yellow",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Eth",
+      "Straw color": "Pink",
+      "Cup color": "Zebra",
+      "Random item": "Gold bandana",
+      "Eyewear": "Greens",
+      "Cup Number": "121"
+    }
+  },
+  {
+    "id": "efbf6084d8da32712be3712cdf3d4bd019e46de5b00826588d50e1c212f63fb2i0",
+    "meta": {
+      "name": "Leon #122"
+    },
+    "attributes": {
+      "Background": "Fire red",
+      "Jewelry": "None",
+      "Mouth": "Braceface",
+      "Eyes": "Pixel",
+      "Straw color": "Blue",
+      "Cup color": "Gray",
+      "Random item": "Crown",
+      "Eyewear": "None",
+      "Cup Number": "122"
+    }
+  },
+  {
+    "id": "23208aab05aaaed39dbfd1bcbe8c2f7f3b053ade69c1448baa0dda32c5ee5806i0",
+    "meta": {
+      "name": "Onyx #123"
+    },
+    "attributes": {
+      "Background": "Plain blue",
+      "Jewelry": "None",
+      "Mouth": "Zombie",
+      "Eyes": "Bushy",
+      "Straw color": "Blue",
+      "Cup color": "Gold foil",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "123"
+    }
+  },
+  {
+    "id": "aadaea7728531924abe9d995e8b8a70e92b91b45ea1a7be4d9126acef24a77c0i0",
+    "meta": {
+      "name": "Glen #124"
+    },
+    "attributes": {
+      "Background": "Ethscriptions",
+      "Jewelry": "None",
+      "Mouth": "Tongue out",
+      "Eyes": "Baby blues",
+      "Straw color": "Blue",
+      "Cup color": "Red",
+      "Random item": "Blue bandana",
+      "Eyewear": "None",
+      "Cup Number": "124"
+    }
+  },
+  {
+    "id": "defbf83a9889ac64da640819f01407d0c5293d88cbd9dc8532b40b17c6bd00f7i0",
+    "meta": {
+      "name": "Shane #125"
+    },
+    "attributes": {
+      "Background": "Green",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Squares",
+      "Straw color": "Orange",
+      "Cup color": "Zebra",
+      "Random item": "Orange bandana",
+      "Eyewear": "None",
+      "Cup Number": "125"
+    }
+  },
+  {
+    "id": "b85bc595c184abe917773864f20979b4712c6237e37e4a19b5f7ac4dffb9d19ei0",
+    "meta": {
+      "name": "Aiden #126"
+    },
+    "attributes": {
+      "Background": "Plain blue",
+      "Jewelry": "None",
+      "Mouth": "Braceface",
+      "Eyes": "Red X",
+      "Straw color": "Yellow",
+      "Cup color": "Blue jean",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "126"
+    }
+  },
+  {
+    "id": "2851ba64c6726b405362d9885626b0ecb4c3a93eb0caaddbdc8a9a988c45b48ci0",
+    "meta": {
+      "name": "Zane #127"
+    },
+    "attributes": {
+      "Background": "Solana",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Focused",
+      "Straw color": "Blue",
+      "Cup color": "Dirty yellow",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "127"
+    }
+  },
+  {
+    "id": "c7ad6d0d216ce858ff4d27ed2d77b059c3a47e007618e301e453784360fccebci0",
+    "meta": {
+      "name": "Cruz #128"
+    },
+    "attributes": {
+      "Background": "BTC orange",
+      "Jewelry": "None",
+      "Mouth": "Smirk",
+      "Eyes": "Bushy",
+      "Straw color": "Pink",
+      "Cup color": "Army green",
+      "Random item": "Orange bandana",
+      "Eyewear": "None",
+      "Cup Number": "128"
+    }
+  },
+  {
+    "id": "679b8803be63e89be0933996812e9c719ebafcfdaebae4fc61af03a02404f590i0",
+    "meta": {
+      "name": "Hayden #129"
+    },
+    "attributes": {
+      "Background": "Ethscriptions",
+      "Jewelry": "None",
+      "Mouth": "Kissy lips",
+      "Eyes": "Blue flame",
+      "Straw color": "Red",
+      "Cup color": "Zebra",
+      "Random item": "Angel wings",
+      "Eyewear": "None",
+      "Cup Number": "129"
+    }
+  },
+  {
+    "id": "01aacc3c5528806bb2916ed03d97d9c370e34fcd2c69020b2e76bad4af54bd99i0",
+    "meta": {
+      "name": "Reese #130"
+    },
+    "attributes": {
+      "Background": "Sandy yellow",
+      "Jewelry": "Gold chain",
+      "Mouth": "Kissy lips",
+      "Eyes": "Squares",
+      "Straw color": "Blue",
+      "Cup color": "QR",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "130"
+    }
+  },
+  {
+    "id": "45c3fd5d16359124e97b58b69d8e4390e4d648950d0d795fb6ae98142393f979i0",
+    "meta": {
+      "name": "Quincy #131"
+    },
+    "attributes": {
+      "Background": "Fire red",
+      "Jewelry": "None",
+      "Mouth": "Fangs",
+      "Eyes": "Eth",
+      "Straw color": "Orange",
+      "Cup color": "Crudeboy",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "131"
+    }
+  },
+  {
+    "id": "f4d20f2daed9670fa178417610bcd2a7ee060dfb6ab206ed71e31330a859ded8i0",
+    "meta": {
+      "name": "Roux #132"
+    },
+    "attributes": {
+      "Background": "Kinda cream",
+      "Jewelry": "None",
+      "Mouth": "Braceface",
+      "Eyes": "Focused",
+      "Straw color": "Yellow",
+      "Cup color": "Red",
+      "Random item": "Crown",
+      "Eyewear": "None",
+      "Cup Number": "132"
+    }
+  },
+  {
+    "id": "8077cf6c5d2c5fcce5acf49221a21f404c47dd27ae559290c8527cf6ac17d471i0",
+    "meta": {
+      "name": "Pippen #133"
+    },
+    "attributes": {
+      "Background": "Yellow",
+      "Jewelry": "None",
+      "Mouth": "Braceface",
+      "Eyes": "Bushy",
+      "Straw color": "Orange",
+      "Cup color": "Lime green",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "133"
+    }
+  },
+  {
+    "id": "d495161528519b262ddb33ca1dbabe89137ce1369098c07d75fb26293351732ci0",
+    "meta": {
+      "name": "Scout #134"
+    },
+    "attributes": {
+      "Background": "Yellow",
+      "Jewelry": "None",
+      "Mouth": "Smirk",
+      "Eyes": "Blue flame",
+      "Straw color": "Red",
+      "Cup color": "Zebra",
+      "Random item": "Blue bandana",
+      "Eyewear": "None",
+      "Cup Number": "134"
+    }
+  },
+  {
+    "id": "733c402720109b9c20c7e326c22d04378f345e9b28377aff80d7f5d909201e81i0",
+    "meta": {
+      "name": "Parker #135"
+    },
+    "attributes": {
+      "Background": "Fire red",
+      "Jewelry": "None",
+      "Mouth": "Kissy lips",
+      "Eyes": "Bushy",
+      "Straw color": "Blue",
+      "Cup color": "Purple",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "135"
+    }
+  },
+  {
+    "id": "94500bf71a4ae1ef1959945c93c85af9d2da44af87765c6d774693699b78af20i0",
+    "meta": {
+      "name": "Auden #136"
+    },
+    "attributes": {
+      "Background": "Pink",
+      "Jewelry": "None",
+      "Mouth": "Smirk",
+      "Eyes": "Stars",
+      "Straw color": "Red",
+      "Cup color": "Yellow",
+      "Random item": "Angel wings",
+      "Eyewear": "None",
+      "Cup Number": "136"
+    }
+  },
+  {
+    "id": "1ac55dbcc1fdb0e0d3299a4698abf72e2b54f9b6fbba43493c3395ed2898d3a6i0",
+    "meta": {
+      "name": "Maddy #137"
+    },
+    "attributes": {
+      "Background": "Fire red",
+      "Jewelry": "None",
+      "Mouth": "Caution tape",
+      "Eyes": "Pretty",
+      "Straw color": "Pink",
+      "Cup color": "Infared",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "137"
+    }
+  },
+  {
+    "id": "e05a3b71e0b82a37522cc22af4658c9945f5033e52aed51160e6875a53799970i0",
+    "meta": {
+      "name": "Gale #138"
+    },
+    "attributes": {
+      "Background": "Caramel",
+      "Jewelry": "None",
+      "Mouth": "Kissy lips",
+      "Eyes": "Blue flame",
+      "Straw color": "Blue",
+      "Cup color": "Yellow",
+      "Random item": "Dark red bandana",
+      "Eyewear": "Greens",
+      "Cup Number": "138"
+    }
+  },
+  {
+    "id": "1fa98f4ea31b691935943eb53efb48544f307f8235af1646980bf0123db86edei0",
+    "meta": {
+      "name": "Taylor #139"
+    },
+    "attributes": {
+      "Background": "Aqua purple",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Blue flame",
+      "Straw color": "Pink",
+      "Cup color": "Rainbow",
+      "Random item": "Orange bandana",
+      "Eyewear": "None",
+      "Cup Number": "139"
+    }
+  },
+  {
+    "id": "1f1a493cff0e5f3cb9228f24be07efebcaf12144a2e6023e4abca59a6b643eb4i0",
+    "meta": {
+      "name": "Laken #140"
+    },
+    "attributes": {
+      "Background": "Gray",
+      "Jewelry": "None",
+      "Mouth": "Fangs",
+      "Eyes": "Googly",
+      "Straw color": "Orange",
+      "Cup color": "Infared",
+      "Random item": "Dark red bandana",
+      "Eyewear": "None",
+      "Cup Number": "140"
+    }
+  },
+  {
+    "id": "02b926a771eadeb09b2f05bc181792ffb1717e052fb0d6d556d9f123967c82f9i0",
+    "meta": {
+      "name": "Lennon #141"
+    },
+    "attributes": {
+      "Background": "Red shade",
+      "Jewelry": "None",
+      "Mouth": "Crude smile",
+      "Eyes": "Stars",
+      "Straw color": "Red",
+      "Cup color": "Crudeboy",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "141"
+    }
+  },
+  {
+    "id": "ce0888af28f7763ddc0c52f8e1b9817b231acf052af35856d407deb360c37524i0",
+    "meta": {
+      "name": "Emory #142"
+    },
+    "attributes": {
+      "Background": "Ethscriptions",
+      "Jewelry": "None",
+      "Mouth": "Frown",
+      "Eyes": "Pixel",
+      "Straw color": "Pink",
+      "Cup color": "Zima blue",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "142"
+    }
+  },
+  {
+    "id": "eb6ebd1fcf267d49737a4057a2d44129fa7e8c318d17c0458b96de68cb1b2188i0",
+    "meta": {
+      "name": "Nico #143"
+    },
+    "attributes": {
+      "Background": "Green",
+      "Jewelry": "None",
+      "Mouth": "Crude smile",
+      "Eyes": "Blue flame",
+      "Straw color": "Yellow",
+      "Cup color": "Rainbow",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "143"
+    }
+  },
+  {
+    "id": "8a95a67b08f149681a9762fbe74216cfeeb78ef0435ccdb2c29d93a597cadf25i0",
+    "meta": {
+      "name": "Marlowe #144"
+    },
+    "attributes": {
+      "Background": "Plain blue",
+      "Jewelry": "None",
+      "Mouth": "Caution tape",
+      "Eyes": "Blue flame",
+      "Straw color": "Blue",
+      "Cup color": "Pink",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "144"
+    }
+  },
+  {
+    "id": "0b454fcc028f2eb56dac116460f2b2788765e4ab21b7263334ba3b1b765334f6i0",
+    "meta": {
+      "name": "Flynn #145"
+    },
+    "attributes": {
+      "Background": "Fire red",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Bushy",
+      "Straw color": "Blue",
+      "Cup color": "Army green",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "145"
+    }
+  },
+  {
+    "id": "6f469644b281e34a6de4120c3bd5b8fa36f6f9742f8f44fa5f06f11a2777d134i0",
+    "meta": {
+      "name": "Blair #146"
+    },
+    "attributes": {
+      "Background": "Red shade",
+      "Jewelry": "None",
+      "Mouth": "Kissy lips",
+      "Eyes": "Stars",
+      "Straw color": "Pink",
+      "Cup color": "Brown",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "146"
+    }
+  },
+  {
+    "id": "7b3756cbaf7408b7b7288ac1dc5455885f5e7cb0e85b8fecd11142aa61c9da5fi0",
+    "meta": {
+      "name": "Taishe #147"
+    },
+    "attributes": {
+      "Background": "Aqua purple",
+      "Jewelry": "None",
+      "Mouth": "Caution tape",
+      "Eyes": "Pretty",
+      "Straw color": "Blue",
+      "Cup color": "Distorted",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "147"
+    }
+  },
+  {
+    "id": "44991ea0c2aa8e7719c1017cbe0f36f519068d6b8484b31f50662bbe5348a4e6i0",
+    "meta": {
+      "name": "Veda #148"
+    },
+    "attributes": {
+      "Background": "Light gray",
+      "Jewelry": "None",
+      "Mouth": "Kissy lips",
+      "Eyes": "Splatter",
+      "Straw color": "Orange",
+      "Cup color": "Purple",
+      "Random item": "Orange bandana",
+      "Eyewear": "None",
+      "Cup Number": "148"
+    }
+  },
+  {
+    "id": "650efe36dd00ea73cf0ecd75c6e7db51335faeb7935dcdfeb0ced5489901f6e8i0",
+    "meta": {
+      "name": "Shiloh #149"
+    },
+    "attributes": {
+      "Background": "Peach",
+      "Jewelry": "None",
+      "Mouth": "Zombie",
+      "Eyes": "Googly",
+      "Straw color": "Yellow",
+      "Cup color": "Infared",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "149"
+    }
+  },
+  {
+    "id": "4807859104fd30be50d12a3ce138f300fab7bc36472ee85fddb820b6ae6ab8cei0",
+    "meta": {
+      "name": "Enzo #150"
+    },
+    "attributes": {
+      "Background": "Plain blue",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Pixel",
+      "Straw color": "Orange",
+      "Cup color": "Distorted",
+      "Random item": "Gold bandana",
+      "Eyewear": "None",
+      "Cup Number": "150"
+    }
+  },
+  {
+    "id": "27f31a98c458adb837774bc012876f22c4ea7d6b5c567aab423cbf2753839df3i0",
+    "meta": {
+      "name": "Quisha #151"
+    },
+    "attributes": {
+      "Background": "Gray",
+      "Jewelry": "None",
+      "Mouth": "Kissy lips",
+      "Eyes": "Focused",
+      "Straw color": "Orange",
+      "Cup color": "Infared",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "151"
+    }
+  },
+  {
+    "id": "15bfb29891ddd310a3ec9bbacc7434d77e0007d75b53e130ca94880d432cf47fi0",
+    "meta": {
+      "name": "Kevan #152"
+    },
+    "attributes": {
+      "Background": "Sky blue",
+      "Jewelry": "Gold chain",
+      "Mouth": "Wild teeth",
+      "Eyes": "Bitcoin",
+      "Straw color": "Red",
+      "Cup color": "Classic",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "152"
+    }
+  },
+  {
+    "id": "52a5698edcf26bbe25e41cd507af25382ee2ee5e357d5fe4a2ae3c7f11ed8cbai0",
+    "meta": {
+      "name": "William #153"
+    },
+    "attributes": {
+      "Background": "Wine",
+      "Jewelry": "None",
+      "Mouth": "Wild teeth",
+      "Eyes": "Eth",
+      "Straw color": "Pink",
+      "Cup color": "Blue",
+      "Random item": "None",
+      "Eyewear": "3D",
+      "Cup Number": "153"
+    }
+  },
+  {
+    "id": "197c9b467a287346177f0a51d986e9ef8a4405a616c8c768d058b6c7b301c802i0",
+    "meta": {
+      "name": "West #154"
+    },
+    "attributes": {
+      "Background": "Caramel",
+      "Jewelry": "None",
+      "Mouth": "Wild teeth",
+      "Eyes": "Blue flame",
+      "Straw color": "Blue",
+      "Cup color": "CrUNO",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "154"
+    }
+  },
+  {
+    "id": "e6d1ff544b95eb3179fe1eb2276372715c9f05df2846864b26613dc737c62a24i0",
+    "meta": {
+      "name": "Quill #155"
+    },
+    "attributes": {
+      "Background": "Light gray",
+      "Jewelry": "None",
+      "Mouth": "Fangs",
+      "Eyes": "Stars",
+      "Straw color": "Orange",
+      "Cup color": "Blue jean",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "155"
+    }
+  },
+  {
+    "id": "79281fb2746151446995b513ce3233bf204db7e6492eb7fef0bbd77c5a8a5524i0",
+    "meta": {
+      "name": "Harper #156"
+    },
+    "attributes": {
+      "Background": "Gray",
+      "Jewelry": "None",
+      "Mouth": "Crude smile",
+      "Eyes": "Eth",
+      "Straw color": "Red",
+      "Cup color": "Purple",
+      "Random item": "Dreadlocks",
+      "Eyewear": "None",
+      "Cup Number": "156"
+    }
+  },
+  {
+    "id": "713c5a58b3e0b49843e54b96566c78f4b8dc2a03ae0000ea9730d312a2392b99i0",
+    "meta": {
+      "name": "Shawn #157"
+    },
+    "attributes": {
+      "Background": "Aqua purple",
+      "Jewelry": "None",
+      "Mouth": "Frown",
+      "Eyes": "Focused",
+      "Straw color": "Orange",
+      "Cup color": "Purple",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "157"
+    }
+  },
+  {
+    "id": "5fc86e5110711b86420f8f8b2424e7151b944c94eb7e8f87ba7ae012dbb8850di0",
+    "meta": {
+      "name": "Sway #158"
+    },
+    "attributes": {
+      "Background": "Gray",
+      "Jewelry": "None",
+      "Mouth": "Tongue out",
+      "Eyes": "Stars",
+      "Straw color": "Red",
+      "Cup color": "Distorted",
+      "Random item": "Blue bandana",
+      "Eyewear": "None",
+      "Cup Number": "158"
+    }
+  },
+  {
+    "id": "71248a7b0fe15c4f077432469d704f68015d9cf61894dc262117a67856dffa9fi0",
+    "meta": {
+      "name": "Lawrence #159"
+    },
+    "attributes": {
+      "Background": "Chili green",
+      "Jewelry": "None",
+      "Mouth": "Frown",
+      "Eyes": "Triangle",
+      "Straw color": "Blue",
+      "Cup color": "Blue",
+      "Random item": "None",
+      "Eyewear": "Crude",
+      "Cup Number": "159"
+    }
+  },
+  {
+    "id": "6130e266464c549d00a8bf989cd31a6d2216f831abb7c26835a3a569ab4832dai0",
+    "meta": {
+      "name": "Darnell #160"
+    },
+    "attributes": {
+      "Background": "Kinda cream",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Doge",
+      "Straw color": "Blue",
+      "Cup color": "White",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "160"
+    }
+  },
+  {
+    "id": "1bd3eff4d686bb8d1b475f8df5ecfbb7d9fa9127dbd067bedd003088c52d36f5i0",
+    "meta": {
+      "name": "Koa #161"
+    },
+    "attributes": {
+      "Background": "Navy blue",
+      "Jewelry": "None",
+      "Mouth": "Fangs",
+      "Eyes": "Triangle",
+      "Straw color": "Yellow",
+      "Cup color": "Rainbow",
+      "Random item": "Blue bandana",
+      "Eyewear": "None",
+      "Cup Number": "161"
+    }
+  },
+  {
+    "id": "94d9be0b066d4274065ce8433a7f3b4c122ed70635f9027873855557ba4c5406i0",
+    "meta": {
+      "name": "Vale #162"
+    },
+    "attributes": {
+      "Background": "Sun",
+      "Jewelry": "None",
+      "Mouth": "Frown",
+      "Eyes": "Pretty",
+      "Straw color": "Blue",
+      "Cup color": "Lime green",
+      "Random item": "Orange bandana",
+      "Eyewear": "None",
+      "Cup Number": "162"
+    }
+  },
+  {
+    "id": "e29fc192143b57655eb69dd0ae19532e5b85d9a272f627423acba16efeb3a937i0",
+    "meta": {
+      "name": "Reed #163"
+    },
+    "attributes": {
+      "Background": "Plain blue",
+      "Jewelry": "None",
+      "Mouth": "Fangs",
+      "Eyes": "Splatter",
+      "Straw color": "Red",
+      "Cup color": "Army green",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "163"
+    }
+  },
+  {
+    "id": "6afb92ba144b187319af4b700167dda678e64e9d8228932556efec96d9825110i0",
+    "meta": {
+      "name": "Dallas #164"
+    },
+    "attributes": {
+      "Background": "Mint green",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Bitcoin",
+      "Straw color": "Pink",
+      "Cup color": "Crudeboy",
+      "Random item": "None",
+      "Eyewear": "3D",
+      "Cup Number": "164"
+    }
+  },
+  {
+    "id": "9c5df4703da93c191421a0875cbbc5821d028177647bbf6510747ea2a005ad41i0",
+    "meta": {
+      "name": "Oren #165"
+    },
+    "attributes": {
+      "Background": "Caramel",
+      "Jewelry": "None",
+      "Mouth": "Fangs",
+      "Eyes": "Squares",
+      "Straw color": "Blue",
+      "Cup color": "OG cup",
+      "Random item": "None",
+      "Eyewear": "3D",
+      "Cup Number": "165"
+    }
+  },
+  {
+    "id": "a9a0f79d925fa1a775192b3ae33fbc82c476c5f3b0b07cecef484d7ecb2288c6i0",
+    "meta": {
+      "name": "Echo #166"
+    },
+    "attributes": {
+      "Background": "Mocha",
+      "Jewelry": "None",
+      "Mouth": "Fangs",
+      "Eyes": "Fire emoji",
+      "Straw color": "Red",
+      "Cup color": "Dirty yellow",
+      "Random item": "Dark red bandana",
+      "Eyewear": "None",
+      "Cup Number": "166"
+    }
+  },
+  {
+    "id": "a3411a79b219c278d3af9defcbfb4f80809b829df904585275e9d8bf40a945aei0",
+    "meta": {
+      "name": "Julian #167"
+    },
+    "attributes": {
+      "Background": "Plain blue",
+      "Jewelry": "None",
+      "Mouth": "Caution tape",
+      "Eyes": "Bitcoin",
+      "Straw color": "Blue",
+      "Cup color": "Rainbow",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "167"
+    }
+  },
+  {
+    "id": "629f4f1fc65f999a442d83cf0990ae2fa3846d32cf93515097bbb7c8aadf2245i0",
+    "meta": {
+      "name": "Nate #168"
+    },
+    "attributes": {
+      "Background": "Solana",
+      "Jewelry": "None",
+      "Mouth": "Fangs",
+      "Eyes": "Stars",
+      "Straw color": "Pink",
+      "Cup color": "QR",
+      "Random item": "Gold bandana",
+      "Eyewear": "None",
+      "Cup Number": "168"
+    }
+  },
+  {
+    "id": "96d5d4a362df94e5e0c2e0a87d2c683d52c1a219afec7613742c3d711e7291f9i0",
+    "meta": {
+      "name": "Harsh #169"
+    },
+    "attributes": {
+      "Background": "Fire red",
+      "Jewelry": "None",
+      "Mouth": "Braceface",
+      "Eyes": "Baby blues",
+      "Straw color": "Yellow",
+      "Cup color": "Pink",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "169"
+    }
+  },
+  {
+    "id": "aafd39f0ed7fcb0f08571b018da3afc7695cc11a2732517043c67f8f0c834d9bi0",
+    "meta": {
+      "name": "Kenan #170"
+    },
+    "attributes": {
+      "Background": "Light gray",
+      "Jewelry": "None",
+      "Mouth": "Warped",
+      "Eyes": "Stars",
+      "Straw color": "Yellow",
+      "Cup color": "Gray",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "170"
+    }
+  },
+  {
+    "id": "e5f7be7044a3b7a269264d850d36b2bce61a2d012de75a3c3ea5f8d713b4b565i0",
+    "meta": {
+      "name": "Niall #171"
+    },
+    "attributes": {
+      "Background": "Light brown",
+      "Jewelry": "None",
+      "Mouth": "Smirk",
+      "Eyes": "Eth",
+      "Straw color": "Blue",
+      "Cup color": "OG cup",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "171"
+    }
+  },
+  {
+    "id": "48a2fb31537a634d0be0cb55352b211051a19bccf3b9787bf316aa6597ac8874i0",
+    "meta": {
+      "name": "Grayson #172"
+    },
+    "attributes": {
+      "Background": "Red shade",
+      "Jewelry": "None",
+      "Mouth": "Frown",
+      "Eyes": "Stars",
+      "Straw color": "Red",
+      "Cup color": "Army green",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "172"
+    }
+  },
+  {
+    "id": "dd4028f21c58e6988ab5f0fef86f6f969be92a1e1230a07219c4b7b7d4ee7dfci0",
+    "meta": {
+      "name": "Jules #173"
+    },
+    "attributes": {
+      "Background": "Solana",
+      "Jewelry": "None",
+      "Mouth": "Zombie",
+      "Eyes": "Red X",
+      "Straw color": "Pink",
+      "Cup color": "Yellow",
+      "Random item": "Orange bandana",
+      "Eyewear": "None",
+      "Cup Number": "173"
+    }
+  },
+  {
+    "id": "711a25e92b25dc8f33742d726c39cf8c1ec1e96f9fc334cef77b29cb5a307d4bi0",
+    "meta": {
+      "name": "Teal #174"
+    },
+    "attributes": {
+      "Background": "Peach",
+      "Jewelry": "None",
+      "Mouth": "Tongue out",
+      "Eyes": "Pixel",
+      "Straw color": "Pink",
+      "Cup color": "Dirty yellow",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "174"
+    }
+  },
+  {
+    "id": "1865066a125011afe143973ad84a9a295d03c24d7925f80a291041023ffdb1aai0",
+    "meta": {
+      "name": "Ivy #175"
+    },
+    "attributes": {
+      "Background": "Kinda cream",
+      "Jewelry": "None",
+      "Mouth": "Smoking",
+      "Eyes": "Bushy",
+      "Straw color": "Blue",
+      "Cup color": "Green",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "175"
+    }
+  },
+  {
+    "id": "7c9d6214c2d69e9220f2d361eac2b1264144ba12acf516c3b57b7074dc94b4fdi0",
+    "meta": {
+      "name": "Janae #176"
+    },
+    "attributes": {
+      "Background": "Green",
+      "Jewelry": "None",
+      "Mouth": "Smoking",
+      "Eyes": "Pretty",
+      "Straw color": "Orange",
+      "Cup color": "Rainbow",
+      "Random item": "Blue bandana",
+      "Eyewear": "None",
+      "Cup Number": "176"
+    }
+  },
+  {
+    "id": "a8d3b26541624161791fea3d30e5b6ea606d77304601b0ddaa6bbd0b5e64ee89i0",
+    "meta": {
+      "name": "Perez #177"
+    },
+    "attributes": {
+      "Background": "Baby blue",
+      "Jewelry": "None",
+      "Mouth": "Smirk",
+      "Eyes": "Blue flame",
+      "Straw color": "Pink",
+      "Cup color": "Army green",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "177"
+    }
+  },
+  {
+    "id": "1a55800cca79ad0bcc6f2cc9757bcfe110bb1f98f9b4536e2db865af72f295abi0",
+    "meta": {
+      "name": "Omar #178"
+    },
+    "attributes": {
+      "Background": "Chili green",
+      "Jewelry": "None",
+      "Mouth": "Kissy lips",
+      "Eyes": "Bushy",
+      "Straw color": "Red",
+      "Cup color": "Lime green",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "178"
+    }
+  },
+  {
+    "id": "6d65e76553b43930ec2e240490f602bbb5ea3ff291771cee02436bba9cc8b029i0",
+    "meta": {
+      "name": "Shane #179"
+    },
+    "attributes": {
+      "Background": "Light gray",
+      "Jewelry": "None",
+      "Mouth": "Zombie",
+      "Eyes": "Splatter",
+      "Straw color": "Orange",
+      "Cup color": "Green",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "179"
+    }
+  },
+  {
+    "id": "ff27e11f5a8137d7cc468ec646ed080a4440ac005e1490e584ef3a69a7b4d134i0",
+    "meta": {
+      "name": "Romero #180"
+    },
+    "attributes": {
+      "Background": "Peach",
+      "Jewelry": "None",
+      "Mouth": "Fangs",
+      "Eyes": "Doge",
+      "Straw color": "Pink",
+      "Cup color": "Rainbow",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "180"
+    }
+  },
+  {
+    "id": "3eca77c143ccc9152ddae3d510a4c08ca68f5940deefc99a93b351d162682308i0",
+    "meta": {
+      "name": "Airius #181"
+    },
+    "attributes": {
+      "Background": "Wine",
+      "Jewelry": "None",
+      "Mouth": "Braceface",
+      "Eyes": "Eth",
+      "Straw color": "Blue",
+      "Cup color": "Army green",
+      "Random item": "Dark red bandana",
+      "Eyewear": "None",
+      "Cup Number": "181"
+    }
+  },
+  {
+    "id": "f97282f64a7ca3824fd49f0ce8910e1fdbee4261b27a73474896a79f841be4f5i0",
+    "meta": {
+      "name": "Peter #182"
+    },
+    "attributes": {
+      "Background": "Peach",
+      "Jewelry": "None",
+      "Mouth": "Fangs",
+      "Eyes": "Red X",
+      "Straw color": "Red",
+      "Cup color": "Gold foil",
+      "Random item": "Stain",
+      "Eyewear": "None",
+      "Cup Number": "182"
+    }
+  },
+  {
+    "id": "24e71084b37c97dbfd3d39c91470d35ccab8e9610dfb89a04833e2e326a1d811i0",
+    "meta": {
+      "name": "Rowan #183"
+    },
+    "attributes": {
+      "Background": "Plain blue",
+      "Jewelry": "None",
+      "Mouth": "Crude smile",
+      "Eyes": "Focused",
+      "Straw color": "Blue",
+      "Cup color": "Gold foil",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "183"
+    }
+  },
+  {
+    "id": "df14c68bc5c50fa5a4d1848e93f26530de583ada50b0fbc2efd859e7bbbc6165i0",
+    "meta": {
+      "name": "Sage #184"
+    },
+    "attributes": {
+      "Background": "Brown",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Triangle",
+      "Straw color": "Pink",
+      "Cup color": "Green",
+      "Random item": "Blue bandana",
+      "Eyewear": "None",
+      "Cup Number": "184"
+    }
+  },
+  {
+    "id": "ce97da3a40667fbea77aed027a859521e40cb140ad18e49c532c187d320c37a4i0",
+    "meta": {
+      "name": "Simon #185"
+    },
+    "attributes": {
+      "Background": "Baby blue",
+      "Jewelry": "None",
+      "Mouth": "Tongue out",
+      "Eyes": "Squares",
+      "Straw color": "Pink",
+      "Cup color": "RWB",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "185"
+    }
+  },
+  {
+    "id": "0ee79320cd2f4c6652b0abed00e00051ea4aabb9b3d7e97ef2c74271884ea5d6i0",
+    "meta": {
+      "name": "Smitty #186"
+    },
+    "attributes": {
+      "Background": "Caramel",
+      "Jewelry": "None",
+      "Mouth": "Smirk",
+      "Eyes": "Splatter",
+      "Straw color": "Red",
+      "Cup color": "OG cup",
+      "Random item": "None",
+      "Eyewear": "Reflector",
+      "Cup Number": "186"
+    }
+  },
+  {
+    "id": "4c356ecfb9632543dccfa026d47b1c3daa93e42209c678cca99c170da577af85i0",
+    "meta": {
+      "name": "Byron #187"
+    },
+    "attributes": {
+      "Background": "Brown",
+      "Jewelry": "None",
+      "Mouth": "Zombie",
+      "Eyes": "Fire emoji",
+      "Straw color": "Yellow",
+      "Cup color": "Rainbow",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "187"
+    }
+  },
+  {
+    "id": "9ea10765a924b007c233977def8a3eb3ae293341a04a157c2d034ef64c3cb1b3i0",
+    "meta": {
+      "name": "Trixie #188"
+    },
+    "attributes": {
+      "Background": "BTC orange",
+      "Jewelry": "Gold chain",
+      "Mouth": "Warped",
+      "Eyes": "Pretty",
+      "Straw color": "Yellow",
+      "Cup color": "Blue",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "188"
+    }
+  },
+  {
+    "id": "5df7f678163b919833871b52bc5513309dc35cdbc809660c1e6fe03921d22094i0",
+    "meta": {
+      "name": "PJ #189"
+    },
+    "attributes": {
+      "Background": "Sun",
+      "Jewelry": "None",
+      "Mouth": "Braceface",
+      "Eyes": "Triangle",
+      "Straw color": "Yellow",
+      "Cup color": "Classic",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "189"
+    }
+  },
+  {
+    "id": "e509728edb58862e71ef91d236a0222371b1b83e45904ca74391f683c19411b3i0",
+    "meta": {
+      "name": "Keith #190"
+    },
+    "attributes": {
+      "Background": "Ethscriptions",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Bitcoin",
+      "Straw color": "Red",
+      "Cup color": "CrUNO",
+      "Random item": "Angel wings",
+      "Eyewear": "3D",
+      "Cup Number": "190"
+    }
+  },
+  {
+    "id": "46aed65f33bcbbf8bb6ba387ee7dbd75b193a3082b96c0385c3483b40d0308d3i0",
+    "meta": {
+      "name": "Remy #191"
+    },
+    "attributes": {
+      "Background": "Navy blue",
+      "Jewelry": "None",
+      "Mouth": "Scream",
+      "Eyes": "Fire emoji",
+      "Straw color": "Pink",
+      "Cup color": "Blue jean",
+      "Random item": "Dreadlocks",
+      "Eyewear": "None",
+      "Cup Number": "191"
+    }
+  },
+  {
+    "id": "79646977bc6868c1b14fbcc02459a03b19b09c5e92b7f095eed94e4fa564b005i0",
+    "meta": {
+      "name": "Rio #192"
+    },
+    "attributes": {
+      "Background": "Navy blue",
+      "Jewelry": "None",
+      "Mouth": "Tongue out",
+      "Eyes": "Pixel",
+      "Straw color": "Red",
+      "Cup color": "Yellow",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "192"
+    }
+  },
+  {
+    "id": "bb856f6788c555fcdbf3acf8c111ab2169c76fd858dc61e1761f9a20dad26363i0",
+    "meta": {
+      "name": "Juice #193"
+    },
+    "attributes": {
+      "Background": "Gray",
+      "Jewelry": "None",
+      "Mouth": "Wild teeth",
+      "Eyes": "Blue flame",
+      "Straw color": "Blue",
+      "Cup color": "Gray",
+      "Random item": "None",
+      "Eyewear": "Reflector",
+      "Cup Number": "193"
+    }
+  },
+  {
+    "id": "9d06789c0803b254f7526e293ce37a01adaa781ac7f298c65dc9614e6576cf9fi0",
+    "meta": {
+      "name": "Erik #194"
+    },
+    "attributes": {
+      "Background": "Dull green",
+      "Jewelry": "None",
+      "Mouth": "Caution tape",
+      "Eyes": "Pixel",
+      "Straw color": "Red",
+      "Cup color": "Green",
+      "Random item": "Stain",
+      "Eyewear": "None",
+      "Cup Number": "194"
+    }
+  },
+  {
+    "id": "f139bf59b49db14948c41915cd25309e6c1aca49ba1ab860682dc619467a8b11i0",
+    "meta": {
+      "name": "Ron #195"
+    },
+    "attributes": {
+      "Background": "Mint green",
+      "Jewelry": "None",
+      "Mouth": "Buy Me",
+      "Eyes": "Bushy",
+      "Straw color": "Blue",
+      "Cup color": "Lime green",
+      "Random item": "Crown",
+      "Eyewear": "None",
+      "Cup Number": "195"
+    }
+  },
+  {
+    "id": "9e0c0fe70c9fcadcc642e1dd693a332d4646aedfb42e9c561af383c7b555bb91i0",
+    "meta": {
+      "name": "Terrance #196"
+    },
+    "attributes": {
+      "Background": "Berry blue",
+      "Jewelry": "None",
+      "Mouth": "Caution tape",
+      "Eyes": "Stars",
+      "Straw color": "Orange",
+      "Cup color": "Infared",
+      "Random item": "Blue bandana",
+      "Eyewear": "None",
+      "Cup Number": "196"
+    }
+  },
+  {
+    "id": "fcbf3e7a0af82de40a5ab46eaa49b219e0498489514328c954429d341cbe9876i0",
+    "meta": {
+      "name": "Adonis #197"
+    },
+    "attributes": {
+      "Background": "Sun",
+      "Jewelry": "None",
+      "Mouth": "Smoking",
+      "Eyes": "Bitcoin",
+      "Straw color": "Pink",
+      "Cup color": "Blue",
+      "Random item": "Crown",
+      "Eyewear": "Crude",
+      "Cup Number": "197"
+    }
+  },
+  {
+    "id": "ec6af3df2ca741a6790da78aa0a639596c5f6ce079dcfc3ca225c51e60ce620ei0",
+    "meta": {
+      "name": "Eddie #198"
+    },
+    "attributes": {
+      "Background": "Solana",
+      "Jewelry": "None",
+      "Mouth": "Braceface",
+      "Eyes": "Fire emoji",
+      "Straw color": "Blue",
+      "Cup color": "OG cup",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "198"
+    }
+  },
+  {
+    "id": "8033da446376dfd466da00b33c614ab27ee14ba93283768e916c9d7ba0206d09i0",
+    "meta": {
+      "name": "Thomas #199"
+    },
+    "attributes": {
+      "Background": "Peach",
+      "Jewelry": "None",
+      "Mouth": "Frown",
+      "Eyes": "Baby blues",
+      "Straw color": "Pink",
+      "Cup color": "Army green",
+      "Random item": "None",
+      "Eyewear": "None",
+      "Cup Number": "199"
+    }
+  },
+  {
+    "id": "10d9246ce60b451d49cd61e407c43972fd24bd3ebbe85cd4052dea2de92b7efbi0",
+    "meta": {
+      "name": "Woof #200"
+    },
+    "attributes": {
+      "Background": "Ethscriptions",
+      "Jewelry": "None",
+      "Mouth": "Caution tape",
+      "Eyes": "Pixel",
+      "Straw color": "Orange",
+      "Cup color": "Distorted",
+      "Random item": "Arms",
+      "Eyewear": "Reflector",
+      "Cup Number": "200"
+    }
+  }
+]

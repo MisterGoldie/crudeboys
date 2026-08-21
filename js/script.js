@@ -218,27 +218,35 @@
     const searchResults = document.querySelector('.search-results');
     const initialText = document.querySelector('.initial-text');
     const cardsGrid = document.querySelector('.cards-grid');
+    const crunoGallery = document.getElementById('crunoGallery');
+    const cupsGallery = document.getElementById('cupsGallery');
     let cardsData = null;
     let traitsData = {};
     let rarityRanks = {};
     let cardsById = {};
+    let crunoById = {};
+    let cupsById = {};
     let galleryToken = 0;
+
+    const COLLECTION_META = {
+        crudeboys: { label: 'Crudeboys', market: 'crudeboys' },
+        cruno: { label: 'CrUNO', market: 'cruno' },
+        cups: { label: 'Cups on Doge', market: 'cups' },
+    };
 
     Promise.all([
         fetch('js/crudeboys_image.json').then(response => response.json()),
-        fetch('js/crudeboys_traits.json').then(response => response.json()).catch(() => ({}))
+        fetch('js/crudeboys_traits.json').then(response => response.json()).catch(() => ({})),
+        fetch('js/cruno.json').then(response => response.json()).catch(() => []),
+        fetch('js/cups.json').then(response => response.json()).catch(() => [])
     ])
-        .then(([cards, traits]) => {
+        .then(([cards, traits, cruno, cups]) => {
             cardsData = cards;
             traitsData = traits || {};
             rarityRanks = computeRarityRanks(traitsData);
-            cardsById = {};
-            cardsData.forEach((card) => {
-              const key = normalizeInscriptionId(card.id);
-              cardsById[key] = card;
-              const base = key.replace(/i\d+$/i, '');
-              if (base && !cardsById[base]) cardsById[base] = card;
-            });
+            cardsById = indexByInscriptionId(cardsData);
+            crunoById = indexByInscriptionId(cruno);
+            cupsById = indexByInscriptionId(cups);
             setupSearch();
             setupOwnedGallery();
             setupPokerHand();
@@ -284,6 +292,52 @@
 
     function normalizeInscriptionId(id) {
         return String(id || '').trim().toLowerCase();
+    }
+
+    function indexByInscriptionId(list) {
+        const map = {};
+        (list || []).forEach((item) => {
+            if (!item || !item.id) return;
+            const key = normalizeInscriptionId(item.id);
+            map[key] = item;
+            const base = key.replace(/i\d+$/i, '');
+            if (base && !map[base]) map[base] = item;
+        });
+        return map;
+    }
+
+    function lookupByInscriptionId(map, id) {
+        if (!id || !map) return null;
+        const key = normalizeInscriptionId(id);
+        return map[key] || map[key.replace(/i\d+$/i, '')] || null;
+    }
+
+    function findCollectible(id) {
+        const crude = lookupByInscriptionId(cardsById, id);
+        if (crude) {
+            return {
+                collection: 'crudeboys',
+                card: crude,
+                attributes: traitsData[crude.id] || traitsData[id] || null,
+            };
+        }
+        const cruno = lookupByInscriptionId(crunoById, id);
+        if (cruno) {
+            return { collection: 'cruno', card: cruno, attributes: cruno.attributes || null };
+        }
+        const cups = lookupByInscriptionId(cupsById, id);
+        if (cups) {
+            return { collection: 'cups', card: cups, attributes: cups.attributes || null };
+        }
+        return null;
+    }
+
+    function escapeHtml(value) {
+        return String(value || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
     }
 
     function cardNumberFromName(name) {
@@ -344,14 +398,35 @@
         throw new Error('card image failed to load');
     }
 
-    function findCardByInscriptionId(id) {
-        if (!id) return null;
-        const key = normalizeInscriptionId(id);
-        return (
-            cardsById[key] ||
-            cardsById[key.replace(/i\d+$/i, '')] ||
-            null
-        );
+    async function resolveCollectibleImage(entry, fallbackUrl) {
+        if (entry.collection === 'crudeboys') {
+            return resolveCardImage(entry.card, fallbackUrl);
+        }
+        const id = entry.card && entry.card.id;
+        const candidates = [];
+        if (
+            fallbackUrl &&
+            !/dweb\.link/i.test(fallbackUrl) &&
+            !/ipfs/i.test(fallbackUrl)
+        ) {
+            candidates.push(fallbackUrl);
+        }
+        if (id) {
+            candidates.push(
+                `https://cdn.doggy.market/content/${id}`,
+                `https://api.doggy.market/inscriptions/${id}/content`
+            );
+        }
+        const unique = [...new Set(candidates.filter(Boolean))];
+        for (const src of unique) {
+            try {
+                await loadImageCandidate(src, 8000);
+                return src;
+            } catch (e) {
+                /* try next */
+            }
+        }
+        throw new Error('collectible image failed to load');
     }
 
     function findCard(searchTerm) {
@@ -762,79 +837,144 @@
     }
 
     function setupOwnedGallery() {
-        if (!cardsGrid) return;
+        if (!cardsGrid && !crunoGallery && !cupsGallery) return;
+
+        const collectibleNumber = (entry) => {
+            if (entry.collection === 'cups') {
+                return parseInt((entry.attributes && entry.attributes['Cup Number']) || '0', 10) || 0;
+            }
+            return parseInt(cardNumberFromName(entry.card.meta.name) || '0', 10);
+        };
+
+        const collectibleDisplayName = (entry) => {
+            const raw = (entry.card && entry.card.meta && entry.card.meta.name) || '';
+            if (entry.collection === 'cups') {
+                return raw.replace(/\s*#\d+\s*$/, '').trim() || raw;
+            }
+            return raw;
+        };
+
+        const clearHost = (host) => {
+            if (!host) return;
+            host.innerHTML = '';
+            host.hidden = true;
+        };
+
+        const setHostStatus = (host, text) => {
+            if (!host) return;
+            if (!text) {
+                clearHost(host);
+                return;
+            }
+            host.hidden = false;
+            host.innerHTML = `<div class="gallery-status">${escapeHtml(text)}</div>`;
+        };
+
+        const mountCards = (host, items) => {
+            if (!host || !items.length) return [];
+            host.hidden = false;
+            const grid = document.createElement('div');
+            grid.className = 'gallery-grid';
+            host.appendChild(grid);
+            return items.map((item) => {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'gallery-card gallery-card-' + item.collection;
+                button.innerHTML = `
+                    <div class="gallery-card-loading">...</div>
+                    <span class="gallery-card-name">${escapeHtml(collectibleDisplayName(item))}</span>
+                `;
+                grid.appendChild(button);
+                return { button, item };
+            });
+        };
 
         const renderDisconnected = () => {
-            cardsGrid.innerHTML = `
-                <div class="gallery-status">Connect wallet to view your crudes</div>
-            `;
+            setHostStatus(cardsGrid, 'Connect wallet to view your crudes');
+            clearHost(crunoGallery);
+            clearHost(cupsGallery);
         };
 
         const renderOwnedCards = async (ownedDoginals, token) => {
             const owned = ownedDoginals
                 .map((entry) => {
-                    const card = findCardByInscriptionId(entry.id);
-                    if (!card) return null;
-                    return { card, fallbackUrl: entry.imageUrl || null };
+                    const found = findCollectible(entry.id);
+                    if (!found) return null;
+                    return {
+                        ...found,
+                        fallbackUrl: entry.imageUrl || null,
+                    };
                 })
-                .filter(Boolean)
-                .sort((a, b) => {
-                    const an = parseInt(cardNumberFromName(a.card.meta.name) || '0', 10);
-                    const bn = parseInt(cardNumberFromName(b.card.meta.name) || '0', 10);
-                    return an - bn;
-                });
+                .filter(Boolean);
 
-            if (!owned.length) {
-                cardsGrid.innerHTML = `
-                    <div class="gallery-status">No Crudeboys in this wallet</div>
-                `;
-                return;
+            const byCollection = {
+                crudeboys: [],
+                cruno: [],
+                cups: [],
+            };
+            owned.forEach((item) => {
+                if (byCollection[item.collection]) byCollection[item.collection].push(item);
+            });
+            Object.keys(byCollection).forEach((id) => {
+                byCollection[id].sort((a, b) => collectibleNumber(a) - collectibleNumber(b));
+            });
+
+            if (cardsGrid) {
+                if (!byCollection.crudeboys.length) {
+                    setHostStatus(cardsGrid, 'No Crudeboys in this wallet');
+                } else {
+                    setHostStatus(cardsGrid, 'Your Crudes (' + byCollection.crudeboys.length + ')');
+                }
             }
 
-            cardsGrid.innerHTML = `
-                <div class="gallery-status">Your Crudes (${owned.length})</div>
-                <div class="gallery-grid"></div>
-            `;
-            const grid = cardsGrid.querySelector('.gallery-grid');
+            if (byCollection.cruno.length) {
+                setHostStatus(crunoGallery, 'Your CrUNOS (' + byCollection.cruno.length + ')');
+            } else {
+                clearHost(crunoGallery);
+            }
+
+            if (byCollection.cups.length) {
+                setHostStatus(cupsGallery, 'Your Cups (' + byCollection.cups.length + ')');
+            } else {
+                clearHost(cupsGallery);
+            }
+
+            const jobs = [
+                ...mountCards(cardsGrid, byCollection.crudeboys),
+                ...mountCards(crunoGallery, byCollection.cruno),
+                ...mountCards(cupsGallery, byCollection.cups),
+            ];
 
             const CONCURRENCY = 8;
             let cursor = 0;
 
-            const loadOne = async ({ card, fallbackUrl }) => {
+            const loadOne = async ({ button, item }) => {
                 if (token !== galleryToken) return;
-                const item = document.createElement('button');
-                item.type = 'button';
-                item.className = 'gallery-card';
-                item.innerHTML = `
-                    <div class="gallery-card-loading">...</div>
-                    <span class="gallery-card-name">${card.meta.name}</span>
-                `;
-                grid.appendChild(item);
-
+                const name = collectibleDisplayName(item);
                 try {
-                    const imageSrc = await resolveCardImage(card, fallbackUrl);
+                    const imageSrc = await resolveCollectibleImage(item, item.fallbackUrl);
                     if (token !== galleryToken) return;
-                    item.innerHTML = `
-                        <img src="${imageSrc}" alt="${card.meta.name}">
-                        <span class="gallery-card-name">${card.meta.name}</span>
+                    button.innerHTML = `
+                        <img src="${imageSrc}" alt="${escapeHtml(name)}">
+                        <span class="gallery-card-name">${escapeHtml(name)}</span>
                     `;
-                    item.onclick = () => showCardDetails(card.id, card.meta.name, imageSrc);
+                    button.onclick = () => showCardDetails(item.card.id, name, imageSrc);
                 } catch (e) {
                     if (token !== galleryToken) return;
-                    item.innerHTML = `
+                    button.innerHTML = `
                         <div class="gallery-card-loading">?</div>
-                        <span class="gallery-card-name">${card.meta.name}</span>
+                        <span class="gallery-card-name">${escapeHtml(name)}</span>
                     `;
-                    item.onclick = () =>
-                        showCardDetails(card.id, card.meta.name, card.meta.image);
+                    button.onclick = () =>
+                        showCardDetails(item.card.id, name, item.card.meta.image || '');
                 }
             };
 
-            const workers = Array.from({ length: Math.min(CONCURRENCY, owned.length) }, async () => {
-                while (cursor < owned.length) {
+            const workers = Array.from({ length: Math.min(CONCURRENCY, jobs.length) || 0 }, async () => {
+                while (cursor < jobs.length) {
                     if (token !== galleryToken) return;
                     const index = cursor++;
-                    await loadOne(owned[index]);
+                    await loadOne(jobs[index]);
                 }
             });
             await Promise.all(workers);
@@ -850,9 +990,9 @@
                 return;
             }
 
-            cardsGrid.innerHTML = `
-                <div class="gallery-status">Loading your crudes...</div>
-            `;
+            setHostStatus(cardsGrid, 'Loading your crudes...');
+            clearHost(crunoGallery);
+            clearHost(cupsGallery);
 
             try {
                 const ownedDoginals = walletApi.getOwnedDoginals
@@ -865,9 +1005,9 @@
                 await renderOwnedCards(ownedDoginals, token);
             } catch (err) {
                 if (token !== galleryToken) return;
-                cardsGrid.innerHTML = `
-                    <div class="gallery-status">${err.message || 'Could not load wallet doginals.'}</div>
-                `;
+                setHostStatus(cardsGrid, err.message || 'Could not load wallet doginals.');
+                clearHost(crunoGallery);
+                clearHost(cupsGallery);
             }
         };
 
@@ -875,39 +1015,45 @@
             refreshGallery();
         });
 
-        // In case wallet restored before cards JSON finished loading.
         refreshGallery();
     }
 
     window.showCardDetails = function(id, name, image) {
-        // Construct Doggy Market inscription URL (id is the inscription ID)
         const doggyMarketUrl = `https://doggy.market/inscription/${id}`;
-
-        const rankInfo = rarityRanks[id];
+        const collectible = findCollectible(id);
+        const collectionInfo = collectible ? COLLECTION_META[collectible.collection] : null;
+        const rankInfo = collectible && collectible.collection === 'crudeboys'
+            ? rarityRanks[id] || rarityRanks[collectible.card.id]
+            : null;
         const rankHtml = rankInfo
             ? `<p class="modal-rarity-rank">Rarity Rank #${rankInfo.rank} / ${rankInfo.total}</p>`
             : '';
+        const collectionHtml = collectionInfo
+            ? `<p class="modal-collection">${collectionInfo.label}</p>`
+            : '';
 
-        const attributes = traitsData[id];
+        const attributes = (collectible && collectible.attributes) || traitsData[id];
         let traitsHtml = '';
         if (attributes && Object.keys(attributes).length) {
             const rows = Object.entries(attributes)
                 .filter(([, value]) => value != null && String(value).trim() !== '')
                 .map(([trait, value]) => `
                     <div class="trait">
-                        <span class="trait-type">${trait}</span>
-                        <span class="trait-value">${value}</span>
+                        <span class="trait-type">${escapeHtml(trait)}</span>
+                        <span class="trait-value">${escapeHtml(value)}</span>
                     </div>
                 `).join('');
             traitsHtml = `<div class="card-traits">${rows}</div>`;
         }
 
+        const safeName = escapeHtml(name);
         const modal = document.createElement('div');
         modal.className = 'card-modal';
         modal.innerHTML = `
             <div class="modal-content">
-                <img src="${image}" alt="${name}">
-                <p class="card-name">${name}</p>
+                <img src="${image}" alt="${safeName}">
+                <p class="card-name">${safeName}</p>
+                ${collectionHtml}
                 ${rankHtml}
                 ${traitsHtml}
                 <div class="card-links">

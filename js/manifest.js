@@ -79,6 +79,8 @@ export const pending = [
   "js/imagesloaded.pkgd.min.js",
   "js/TweenMax.min.js",
   "js/crudeboys_traits.json",
+  "js/cruno.json",
+  "js/cups.json",
   "images/codlogo.png",
   "images/cardpromo.webp",
   "images/raretraits.webp",
