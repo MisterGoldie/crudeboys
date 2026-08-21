@@ -267,20 +267,27 @@
         const remote = card.meta.image;
         const list = [];
 
-        // Local files when present (works on localhost and cloudflared → this server).
+        // Local files when present (localhost / tunnel with crudeboycards/).
         const local = localCardPath(card.meta.name);
         if (local) list.push(local);
 
-        // Same-origin proxy avoids browser CORP blocks on public IPFS gateways.
+        // Browser-friendly gateways first (works on Vercel without serverless proxy).
+        if (num) {
+            list.push(
+                `https://w3s.link/ipfs/${IPFS_CID}/${num}.png`,
+                `https://nftstorage.link/ipfs/${IPFS_CID}/${num}.png`
+            );
+        }
+
+        // Same-origin proxy as backup (local-server.js / Vercel API).
         if (num) list.push(`ipfs-proxy/${num}.png`);
 
         if (remote) list.push(remote);
 
         if (num) {
             list.push(
-                `https://nftstorage.link/ipfs/${IPFS_CID}/${num}.png`,
-                `https://w3s.link/ipfs/${IPFS_CID}/${num}.png`,
-                `https://ipfs.io/ipfs/${IPFS_CID}/${num}.png`
+                `https://ipfs.io/ipfs/${IPFS_CID}/${num}.png`,
+                `https://${IPFS_CID}.ipfs.dweb.link/${num}.png`
             );
         }
 
