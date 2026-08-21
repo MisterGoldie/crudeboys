@@ -591,6 +591,126 @@ section.studies .study .study-year {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.poker-section {
+  background: #D7B8EA;
+  min-height: 80vh;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 20px 70px;
+}
+
+.poker-table {
+  width: min(980px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.poker-title {
+  color: #3B1F4A;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.poker-score {
+  color: #3B1F4A;
+  font-family: "Schoolbell", cursive;
+  font-size: 22px;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+.poker-side {
+  width: 100%;
+}
+
+.poker-label {
+  color: #3B1F4A;
+  font-family: "Schoolbell", cursive;
+  font-size: 20px;
+  margin-bottom: 8px;
+  opacity: 0.85;
+}
+
+.poker-hand {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 120px;
+}
+
+.poker-hand-name {
+  min-height: 1.4em;
+  margin-top: 8px;
+  color: #3B1F4A;
+  font-family: "Schoolbell", cursive;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.poker-card {
+  width: min(140px, 17vw);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #3B1F4A;
+  font-family: "Schoolbell", cursive;
+  font-size: 13px;
+  animation: pokerDeal 280ms ease-out both;
+}
+
+.poker-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+.poker-result {
+  margin: 18px 0;
+  color: #5A2D82;
+  font-family: "Schoolbell", cursive;
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+}
+
+.poker-deal {
+  margin-top: 16px;
+  background: #FF8B19;
+  color: #ffffff;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Schoolbell", cursive;
+  font-size: 24px;
+}
+
+.poker-deal:hover:not(:disabled) {
+  background: #e67300;
+}
+
+.poker-deal:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+@keyframes pokerDeal {
+  from {
+    opacity: 0;
+    transform: translateY(16px) rotate(-4deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
+
 .cell img {
     width: 80%;
     height: 80%;
@@ -1214,6 +1334,15 @@ section.studies .study .study-year {
 
   .restart-button {
     font-size: 20px;
+  }
+
+  .poker-section {
+    padding: 72px 12px 48px;
+    min-height: auto;
+  }
+
+  .poker-card {
+    width: min(110px, 42vw);
   }
 
   .image_traits {

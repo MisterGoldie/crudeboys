@@ -241,6 +241,7 @@
             });
             setupSearch();
             setupOwnedGallery();
+            setupPokerHand();
         })
         .catch(error => console.error('Error loading cards:', error));
 
@@ -425,6 +426,250 @@
                     searchResults.innerHTML = '<div class="info-text">card image failed to load</div>';
                 });
         });
+    }
+
+    function pokerIdentity(card) {
+        const attrs = traitsData[card.id] || {};
+        const suitRaw = String(attrs['Card type'] || '').trim().toLowerCase();
+        let suit = '';
+        if (suitRaw.startsWith('heart')) suit = 'H';
+        else if (suitRaw.startsWith('diamond')) suit = 'D';
+        else if (suitRaw.startsWith('club')) suit = 'C';
+        else if (suitRaw.startsWith('spade')) suit = 'S';
+        else if (suitRaw.startsWith('joker')) suit = 'J';
+
+        const rankSources = [
+            attrs['Red numbered cards'],
+            attrs['Black numbered cards'],
+            attrs['Red Face cards'],
+            attrs['Black face cards'],
+            attrs['Joker cards'],
+        ];
+
+        let rank = 0;
+        let wild = suit === 'J';
+        for (let i = 0; i < rankSources.length; i++) {
+            const val = rankSources[i];
+            if (!val) continue;
+            const text = String(val).toLowerCase();
+            if (text.indexOf('joker') !== -1) {
+                wild = true;
+                rank = 0;
+                break;
+            }
+            if (text.indexOf('ace') !== -1) { rank = 14; break; }
+            if (text.indexOf('king') !== -1) { rank = 13; break; }
+            if (text.indexOf('queen') !== -1) { rank = 12; break; }
+            if (text.indexOf('jack') !== -1) { rank = 11; break; }
+            const num = text.match(/(\d+)/);
+            if (num) {
+                rank = parseInt(num[1], 10);
+                break;
+            }
+        }
+
+        return { card, rank, suit, wild };
+    }
+
+    function rankWord(rank, plural) {
+        const one = {
+            14: 'ace', 13: 'king', 12: 'queen', 11: 'jack', 10: 'ten',
+            9: 'nine', 8: 'eight', 7: 'seven', 6: 'six', 5: 'five',
+            4: 'four', 3: 'three', 2: 'two'
+        };
+        const many = {
+            14: 'aces', 13: 'kings', 12: 'queens', 11: 'jacks', 10: 'tens',
+            9: 'nines', 8: 'eights', 7: 'sevens', 6: 'sixes', 5: 'fives',
+            4: 'fours', 3: 'threes', 2: 'twos'
+        };
+        return (plural ? many : one)[rank] || String(rank);
+    }
+
+    function isStraight(sortedDesc) {
+        const unique = [];
+        sortedDesc.forEach((rank) => {
+            if (unique.indexOf(rank) === -1) unique.push(rank);
+        });
+        if (unique.length !== 5) return false;
+        if (unique[0] === 14 && unique[1] === 5 && unique[2] === 4 && unique[3] === 3 && unique[4] === 2) {
+            return true;
+        }
+        return unique[0] - unique[4] === 4;
+    }
+
+    function scoreFive(ranks, suits) {
+        const sorted = ranks.slice().sort((a, b) => b - a);
+        const flush = Boolean(suits[0]) && suits.every((suit) => suit === suits[0]);
+        const straight = isStraight(sorted);
+        const wheel = straight && sorted[0] === 14 && sorted[1] === 5;
+        const straightHigh = wheel ? 5 : sorted[0];
+        const counts = {};
+        sorted.forEach((rank) => {
+            counts[rank] = (counts[rank] || 0) + 1;
+        });
+        const groups = Object.keys(counts)
+            .map((rank) => ({ rank: parseInt(rank, 10), count: counts[rank] }))
+            .sort((a, b) => b.count - a.count || b.rank - a.rank);
+        const pattern = groups.map((group) => group.count).join('');
+        const kick = groups.map((group) => group.rank);
+
+        if (pattern === '5') return { score: 900, kickers: kick, name: 'five of a kind' };
+        if (flush && straight) {
+            const royal = straightHigh === 14;
+            return {
+                score: 800,
+                kickers: [straightHigh],
+                name: royal ? 'royal flush' : 'straight flush'
+            };
+        }
+        if (pattern === '41') return { score: 700, kickers: kick, name: 'four of a kind' };
+        if (pattern === '32') return { score: 600, kickers: kick, name: 'full house' };
+        if (flush) return { score: 500, kickers: sorted, name: 'flush' };
+        if (straight) return { score: 400, kickers: [straightHigh], name: 'straight' };
+        if (pattern === '311') return { score: 300, kickers: kick, name: 'three of a kind' };
+        if (pattern === '221') return { score: 200, kickers: kick, name: 'two pair' };
+        if (pattern === '2111') {
+            return { score: 100, kickers: kick, name: 'pair of ' + rankWord(groups[0].rank, true) };
+        }
+        return { score: 0, kickers: sorted, name: rankWord(sorted[0], false) + ' high' };
+    }
+
+    function handBeats(a, b) {
+        if (a.score !== b.score) return a.score > b.score;
+        const len = Math.max(a.kickers.length, b.kickers.length);
+        for (let i = 0; i < len; i++) {
+            const av = a.kickers[i] || 0;
+            const bv = b.kickers[i] || 0;
+            if (av !== bv) return av > bv;
+        }
+        return false;
+    }
+
+    function evaluatePokerHand(idents) {
+        const wilds = idents.filter((item) => item.wild);
+        const naturals = idents.filter((item) => !item.wild);
+        let best = { score: -1, kickers: [], name: 'high card' };
+        const rankOpts = [14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2];
+        const suitOpts = ['H', 'D', 'C', 'S'];
+
+        function consider(ranks, suits) {
+            const result = scoreFive(ranks, suits);
+            if (best.score < 0 || handBeats(result, best)) best = result;
+        }
+
+        function assign(index, wildRanks, wildSuits) {
+            if (index === wilds.length) {
+                consider(
+                    naturals.map((item) => item.rank).concat(wildRanks),
+                    naturals.map((item) => item.suit).concat(wildSuits)
+                );
+                return;
+            }
+            for (let r = 0; r < rankOpts.length; r++) {
+                for (let s = 0; s < suitOpts.length; s++) {
+                    wildRanks.push(rankOpts[r]);
+                    wildSuits.push(suitOpts[s]);
+                    assign(index + 1, wildRanks, wildSuits);
+                    wildRanks.pop();
+                    wildSuits.pop();
+                }
+            }
+        }
+
+        assign(0, [], []);
+        return best;
+    }
+
+    function setupPokerHand() {
+        const youEl = document.querySelector('.poker-hand-you');
+        const cpuEl = document.querySelector('.poker-hand-cpu');
+        const youNameEl = document.querySelector('.poker-you-name');
+        const cpuNameEl = document.querySelector('.poker-cpu-name');
+        const resultEl = document.querySelector('.poker-result');
+        const scoreEl = document.querySelector('.poker-score');
+        const dealBtn = document.querySelector('.poker-deal');
+        if (!youEl || !cpuEl || !resultEl || !dealBtn || !cardsData) return;
+
+        const deck = cardsData
+            .map(pokerIdentity)
+            .filter((item) => item.wild || (item.rank >= 2 && item.suit));
+
+        let youWins = 0;
+        let cpuWins = 0;
+        let busy = false;
+
+        function renderScore() {
+            if (scoreEl) scoreEl.textContent = 'you ' + youWins + ' — ' + cpuWins + ' cpu';
+        }
+
+        function shuffleTen() {
+            const copy = deck.slice();
+            for (let i = copy.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                const tmp = copy[i];
+                copy[i] = copy[j];
+                copy[j] = tmp;
+            }
+            return { you: copy.slice(0, 5), cpu: copy.slice(5, 10) };
+        }
+
+        function renderHand(el, hand, startDelay) {
+            el.innerHTML = '';
+            hand.forEach((item, index) => {
+                const imageSrc = localCardImage(item.card);
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'poker-card';
+                btn.style.animationDelay = (startDelay + index * 70) + 'ms';
+                btn.innerHTML = `
+                    <img src="${imageSrc}" alt="${item.card.meta.name}" loading="lazy" decoding="async">
+                    <span>${item.card.meta.name}</span>
+                `;
+                btn.addEventListener('click', () => {
+                    showCardDetails(item.card.id, item.card.meta.name, imageSrc);
+                });
+                el.appendChild(btn);
+            });
+        }
+
+        function deal() {
+            if (busy) return;
+            busy = true;
+            dealBtn.disabled = true;
+
+            const round = shuffleTen();
+            const youHand = evaluatePokerHand(round.you);
+            const cpuHand = evaluatePokerHand(round.cpu);
+
+            cpuEl.innerHTML = '';
+            if (cpuNameEl) cpuNameEl.textContent = '';
+            if (youNameEl) youNameEl.textContent = '';
+            resultEl.textContent = 'drawing...';
+
+            renderHand(youEl, round.you, 0);
+            if (youNameEl) youNameEl.textContent = youHand.name;
+
+            window.setTimeout(() => {
+                renderHand(cpuEl, round.cpu, 0);
+                if (cpuNameEl) cpuNameEl.textContent = cpuHand.name;
+
+                let outcome = 'split pot';
+                if (handBeats(youHand, cpuHand)) {
+                    youWins += 1;
+                    outcome = 'you win';
+                } else if (handBeats(cpuHand, youHand)) {
+                    cpuWins += 1;
+                    outcome = 'cpu wins';
+                }
+                resultEl.textContent = outcome;
+                renderScore();
+                busy = false;
+                dealBtn.disabled = false;
+            }, 700);
+        }
+
+        dealBtn.addEventListener('click', deal);
+        renderScore();
     }
 
     function setupOwnedGallery() {
