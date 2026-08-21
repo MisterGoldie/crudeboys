@@ -547,6 +547,7 @@ section.studies .study .study-year {
   font-size: 80px;
   font-weight: bold;
   transition: background-color 0.3s;
+  touch-action: manipulation;
 }
 
 .cell:hover {
@@ -559,6 +560,7 @@ section.studies .study .study-year {
   font-weight: bold;
   color: #648A2A;
   font-family: "Schoolbell", cursive;
+  transition: opacity 0.25s ease;
 }
 
 .restart-button {
@@ -574,8 +576,9 @@ section.studies .study .study-year {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  touch-action: manipulation;
   z-index: 1000;
   font-family: "Schoolbell", cursive;
 }
@@ -619,6 +622,7 @@ section.studies .study .study-year {
   font-size: 22px;
   margin-bottom: 24px;
   opacity: 0.9;
+  transition: opacity 0.35s ease;
 }
 
 .poker-side {
@@ -650,6 +654,7 @@ section.studies .study .study-year {
   font-family: "Schoolbell", cursive;
   font-size: 18px;
   opacity: 0.9;
+  transition: opacity 0.35s ease;
 }
 
 .poker-card {
@@ -661,7 +666,22 @@ section.studies .study .study-year {
   color: #3B1F4A;
   font-family: "Schoolbell", cursive;
   font-size: 13px;
-  animation: pokerDeal 280ms ease-out both;
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+  transition: opacity 0.38s ease, transform 0.38s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  contain: layout style;
+}
+
+.poker-card.is-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.poker-card.is-out {
+  opacity: 0;
+  transform: translate3d(0, -8px, 0);
 }
 
 .poker-card img {
@@ -670,6 +690,8 @@ section.studies .study .study-year {
   display: block;
   border-radius: 8px;
   margin-bottom: 6px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .poker-result {
@@ -677,6 +699,7 @@ section.studies .study .study-year {
   color: #5A2D82;
   font-family: "Schoolbell", cursive;
   font-size: clamp(1.6rem, 4vw, 2.6rem);
+  transition: opacity 0.35s ease;
 }
 
 .poker-deal {
@@ -689,6 +712,7 @@ section.studies .study .study-year {
   cursor: pointer;
   font-family: "Schoolbell", cursive;
   font-size: 24px;
+  touch-action: manipulation;
 }
 
 .poker-deal:hover:not(:disabled) {
@@ -700,22 +724,56 @@ section.studies .study .study-year {
   cursor: default;
 }
 
-@keyframes pokerDeal {
-  from {
-    opacity: 0;
-    transform: translateY(16px) rotate(-4deg);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) rotate(0);
-  }
+.cell img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
 }
 
-.cell img {
-    width: 80%;
-    height: 80%;
-    object-fit: contain;
-    transition: all 0.3s ease;
+.cell img,
+.cell .xo-mark {
+  display: block;
+  opacity: 0;
+  transform: translate3d(0, 6px, 0);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.cell img.is-in,
+.cell .xo-mark.is-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.cell.is-clearing img,
+.cell.is-clearing .xo-mark {
+  opacity: 0;
+  transform: translate3d(0, 4px, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poker-card,
+  .poker-card.is-in,
+  .poker-card.is-out,
+  .cell img,
+  .cell .xo-mark,
+  .cell.is-clearing img,
+  .cell.is-clearing .xo-mark,
+  .poker-result,
+  .poker-hand-name,
+  .poker-score,
+  .game-status {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .poker-card,
+  .poker-card.is-in,
+  .cell img.is-in,
+  .cell .xo-mark.is-in {
+    opacity: 1 !important;
+  }
 }
 
 .card-modal {

@@ -597,9 +597,78 @@
         let youWins = 0;
         let cpuWins = 0;
         let busy = false;
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const fadeMs = reduceMotion ? 0 : 320;
+        const cardInMs = reduceMotion ? 0 : 380;
+        const staggerMs = reduceMotion ? 0 : 70;
+
+        function wait(ms) {
+            return new Promise((resolve) => window.setTimeout(resolve, ms));
+        }
+
+        function nextPaint() {
+            return new Promise((resolve) => {
+                window.requestAnimationFrame(() => {
+                    window.requestAnimationFrame(resolve);
+                });
+            });
+        }
+
+        function revealCard(el) {
+            el.style.willChange = 'opacity, transform';
+            el.classList.add('is-in');
+            el.addEventListener('transitionend', () => {
+                el.style.willChange = 'auto';
+            }, { once: true });
+        }
 
         function renderScore() {
-            if (scoreEl) scoreEl.textContent = 'you ' + youWins + ' — ' + cpuWins + ' cpu';
+            if (!scoreEl) return;
+            scoreEl.style.opacity = '0';
+            window.setTimeout(() => {
+                scoreEl.textContent = 'you ' + youWins + ' — ' + cpuWins + ' cpu';
+                scoreEl.style.opacity = '1';
+            }, fadeMs || 16);
+        }
+
+        function fadeText(el, text) {
+            if (!el) return Promise.resolve();
+            el.style.opacity = '0';
+            return wait(fadeMs).then(() => {
+                el.textContent = text || '';
+                el.style.opacity = text ? '1' : '0';
+            });
+        }
+
+        function fadeOutHand(el) {
+            const cards = Array.prototype.slice.call(el.querySelectorAll('.poker-card'));
+            if (!cards.length) {
+                el.innerHTML = '';
+                return Promise.resolve();
+            }
+            if (reduceMotion) {
+                el.innerHTML = '';
+                return Promise.resolve();
+            }
+            cards.forEach((card) => {
+                card.classList.add('is-out');
+            });
+            return wait(fadeMs + 40).then(() => {
+                el.innerHTML = '';
+            });
+        }
+
+        function preloadSrc(src) {
+            return new Promise((resolve) => {
+                if (!src) {
+                    resolve(src);
+                    return;
+                }
+                const img = new window.Image();
+                img.onload = () => resolve(src);
+                img.onerror = () => resolve(src);
+                img.src = src;
+            });
         }
 
         function shuffleTen() {
@@ -613,22 +682,36 @@
             return { you: copy.slice(0, 5), cpu: copy.slice(5, 10) };
         }
 
-        function renderHand(el, hand, startDelay) {
+        function renderHand(el, hand) {
             el.innerHTML = '';
-            hand.forEach((item, index) => {
-                const imageSrc = localCardImage(item.card);
-                const btn = document.createElement('button');
-                btn.type = 'button';
-                btn.className = 'poker-card';
-                btn.style.animationDelay = (startDelay + index * 70) + 'ms';
-                btn.innerHTML = `
-                    <img src="${imageSrc}" alt="${item.card.meta.name}" loading="lazy" decoding="async">
-                    <span>${item.card.meta.name}</span>
-                `;
-                btn.addEventListener('click', () => {
-                    showCardDetails(item.card.id, item.card.meta.name, imageSrc);
+            const srcs = hand.map((item) => localCardImage(item.card));
+            return Promise.all(srcs.map(preloadSrc)).then(() => {
+                const buttons = hand.map((item, index) => {
+                    const imageSrc = srcs[index];
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'poker-card';
+                    btn.innerHTML = `
+                        <img src="${imageSrc}" alt="${item.card.meta.name}" decoding="async">
+                        <span>${item.card.meta.name}</span>
+                    `;
+                    btn.addEventListener('click', () => {
+                        showCardDetails(item.card.id, item.card.meta.name, imageSrc);
+                    });
+                    el.appendChild(btn);
+                    return btn;
                 });
-                el.appendChild(btn);
+
+                return nextPaint().then(() => {
+                    buttons.forEach((btn, index) => {
+                        if (reduceMotion) {
+                            btn.classList.add('is-in');
+                            return;
+                        }
+                        window.setTimeout(() => revealCard(btn), index * staggerMs);
+                    });
+                    return wait(cardInMs + Math.max(0, buttons.length - 1) * staggerMs);
+                });
             });
         }
 
@@ -641,35 +724,41 @@
             const youHand = evaluatePokerHand(round.you);
             const cpuHand = evaluatePokerHand(round.cpu);
 
-            cpuEl.innerHTML = '';
-            if (cpuNameEl) cpuNameEl.textContent = '';
-            if (youNameEl) youNameEl.textContent = '';
-            resultEl.textContent = 'drawing...';
-
-            renderHand(youEl, round.you, 0);
-            if (youNameEl) youNameEl.textContent = youHand.name;
-
-            window.setTimeout(() => {
-                renderHand(cpuEl, round.cpu, 0);
-                if (cpuNameEl) cpuNameEl.textContent = cpuHand.name;
-
-                let outcome = 'split pot';
-                if (handBeats(youHand, cpuHand)) {
-                    youWins += 1;
-                    outcome = 'you win';
-                } else if (handBeats(cpuHand, youHand)) {
-                    cpuWins += 1;
-                    outcome = 'cpu wins';
-                }
-                resultEl.textContent = outcome;
-                renderScore();
-                busy = false;
-                dealBtn.disabled = false;
-            }, 700);
+            Promise.all([
+                fadeOutHand(youEl),
+                fadeOutHand(cpuEl),
+                fadeText(youNameEl, ''),
+                fadeText(cpuNameEl, ''),
+                fadeText(resultEl, 'drawing...'),
+            ])
+                .then(() => renderHand(youEl, round.you))
+                .then(() => fadeText(youNameEl, youHand.name))
+                .then(() => renderHand(cpuEl, round.cpu))
+                .then(() => fadeText(cpuNameEl, cpuHand.name))
+                .then(() => {
+                    let outcome = 'split pot';
+                    if (handBeats(youHand, cpuHand)) {
+                        youWins += 1;
+                        outcome = 'you win';
+                    } else if (handBeats(cpuHand, youHand)) {
+                        cpuWins += 1;
+                        outcome = 'cpu wins';
+                    }
+                    return fadeText(resultEl, outcome);
+                })
+                .then(() => {
+                    renderScore();
+                    busy = false;
+                    dealBtn.disabled = false;
+                })
+                .catch(() => {
+                    busy = false;
+                    dealBtn.disabled = false;
+                });
         }
 
         dealBtn.addEventListener('click', deal);
-        renderScore();
+        if (scoreEl) scoreEl.textContent = 'you 0 — 0 cpu';
     }
 
     function setupOwnedGallery() {
@@ -870,40 +959,59 @@
             setTimeout(() => {
                 const aiMove = getCpuMove(gameState.board, 'X');
                 makeMove(aiMove);
-            }, 500);
+            }, 420);
         }
+    }
+
+    function setStatus(text) {
+        statusDisplay.style.opacity = '0';
+        window.setTimeout(() => {
+            statusDisplay.textContent = text;
+            statusDisplay.style.opacity = '1';
+        }, 180);
+    }
+
+    function revealMark(el) {
+        window.requestAnimationFrame(() => {
+            window.requestAnimationFrame(() => {
+                el.classList.add('is-in');
+            });
+        });
     }
 
     function makeMove(index) {
         gameState.board[index] = gameState.currentPlayer;
         const cell = document.querySelector(`[data-index="${index}"]`);
-        
+        cell.innerHTML = '';
+
         if (gameState.currentPlayer === 'O') {
             const img = document.createElement('img');
             img.src = 'images/o.png';
-            img.style.width = '80%';
-            img.style.height = '80%';
-            img.style.objectFit = 'contain';
-            cell.textContent = '';
+            img.alt = 'O';
             cell.appendChild(img);
+            revealMark(img);
         } else {
-            cell.textContent = gameState.currentPlayer;
+            const mark = document.createElement('span');
+            mark.className = 'xo-mark';
+            mark.textContent = 'X';
+            cell.appendChild(mark);
+            revealMark(mark);
         }
 
         if (checkWin(gameState.board, gameState.currentPlayer)) {
-            statusDisplay.textContent = `${gameState.currentPlayer === 'X' ? 'You lose!' : 'You win!'}`;
+            setStatus(gameState.currentPlayer === 'X' ? 'You lose!' : 'You win!');
             gameState.gameActive = false;
             return;
         }
 
         if (checkDraw()) {
-            statusDisplay.textContent = "Game ended in a draw!";
+            setStatus('Game ended in a draw!');
             gameState.gameActive = false;
             return;
         }
 
         gameState.currentPlayer = gameState.currentPlayer === 'X' ? 'O' : 'X';
-        statusDisplay.textContent = `${gameState.currentPlayer === 'X' ? 'CPU' : 'Your'} turn`;
+        setStatus(gameState.currentPlayer === 'X' ? "CPU's turn" : 'Your turn');
     }
 
     function checkWin(board, player) {
@@ -961,22 +1069,28 @@
     }
 
     function restartGame() {
-        gameState.board = Array(9).fill('');
-        gameState.currentPlayer = 'X';
-        gameState.gameActive = true;
-        cells.forEach(cell => {
-            cell.textContent = '';
-            const img = cell.querySelector('img');
-            if (img) {
-                cell.removeChild(img);
-            }
-        });
-        statusDisplay.textContent = "CPU's turn";
-        
-        setTimeout(() => {
-            const aiMove = getCpuMove(gameState.board, 'X');
-            makeMove(aiMove);
-        }, 500);
+        if (restartButton.disabled) return;
+        restartButton.disabled = true;
+        cells.forEach((cell) => cell.classList.add('is-clearing'));
+        statusDisplay.style.opacity = '0';
+
+        window.setTimeout(() => {
+            gameState.board = Array(9).fill('');
+            gameState.currentPlayer = 'X';
+            gameState.gameActive = true;
+            cells.forEach((cell) => {
+                cell.classList.remove('is-clearing');
+                cell.innerHTML = '';
+            });
+            statusDisplay.textContent = "CPU's turn";
+            statusDisplay.style.opacity = '1';
+            restartButton.disabled = false;
+
+            window.setTimeout(() => {
+                const aiMove = getCpuMove(gameState.board, 'X');
+                makeMove(aiMove);
+            }, 280);
+        }, 220);
     }
 
     // Add event listeners
