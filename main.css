@@ -1034,14 +1034,15 @@ section.studies .study .study-year {
 }
 
 .collection-info-btn {
-    width: 28px;
-    height: 28px;
+    width: 18px;
+    height: 18px;
+    padding: 0;
     border-radius: 50%;
-    border: 1.5px solid currentColor;
+    border: 1px solid currentColor;
     background: transparent;
     color: inherit;
     font-family: "Schoolbell", cursive;
-    font-size: 16px;
+    font-size: 11px;
     line-height: 1;
     cursor: pointer;
     opacity: 0.7;
@@ -1598,9 +1599,9 @@ section.studies .study .study-year {
   }
 
   .collection-info-btn {
-    width: 26px;
-    height: 26px;
-    font-size: 15px;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
   }
 
   #codLogo {
