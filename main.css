@@ -1022,14 +1022,13 @@ section.studies .study .study-year {
 
 .collection-info {
     position: absolute;
-    top: 42px;
+    bottom: 18px;
     right: 14px;
     z-index: 6;
     font-family: "Schoolbell", cursive;
 }
 
 .cups-info {
-    top: 148px;
     color: #111111;
 }
 
@@ -1061,7 +1060,7 @@ section.studies .study .study-year {
 
 .collection-info-panel {
     position: absolute;
-    top: calc(100% + 8px);
+    bottom: calc(100% + 8px);
     right: 0;
     min-width: 220px;
     padding: 12px 14px;
@@ -1502,7 +1501,7 @@ section.studies .study .study-year {
   }
 
   .crudes-info {
-    top: 14px;
+    bottom: 14px;
     right: 12px;
   }
 
@@ -1590,12 +1589,8 @@ section.studies .study .study-year {
   }
 
   .collection-info {
-    top: 28px;
+    bottom: 14px;
     right: 10px;
-  }
-
-  .cups-info {
-    top: 104px;
   }
 
   .collection-info-btn {
@@ -1695,7 +1690,7 @@ section.studies .study .study-year {
   }
 
   .crudes-info {
-    top: 12px;
+    bottom: 12px;
     right: 10px;
   }
 
